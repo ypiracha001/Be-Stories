@@ -9,6 +9,78 @@
       "destination": "/dist/index.html"
     },
     {
+      "source": "/booking",
+      "destination": "/dist/booking/index.html"
+    },
+    {
+      "source": "/booking/",
+      "destination": "/dist/booking/index.html"
+    },
+    {
+      "source": "/enquiries",
+      "destination": "/dist/enquiries/index.html"
+    },
+    {
+      "source": "/enquiries/",
+      "destination": "/dist/enquiries/index.html"
+    },
+    {
+      "source": "/manage",
+      "destination": "/dist/manage/index.html"
+    },
+    {
+      "source": "/manage/",
+      "destination": "/dist/manage/index.html"
+    },
+    {
+      "source": "/work",
+      "destination": "/dist/work/index.html"
+    },
+    {
+      "source": "/work/",
+      "destination": "/dist/work/index.html"
+    },
+    {
+      "source": "/studio",
+      "destination": "/dist/studio/index.html"
+    },
+    {
+      "source": "/studio/",
+      "destination": "/dist/studio/index.html"
+    },
+    {
+      "source": "/capabilities",
+      "destination": "/dist/capabilities/index.html"
+    },
+    {
+      "source": "/capabilities/",
+      "destination": "/dist/capabilities/index.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/dist/privacy/index.html"
+    },
+    {
+      "source": "/privacy/",
+      "destination": "/dist/privacy/index.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/dist/terms/index.html"
+    },
+    {
+      "source": "/terms/",
+      "destination": "/dist/terms/index.html"
+    },
+    {
+      "source": "/journal",
+      "destination": "/dist/journal/index.html"
+    },
+    {
+      "source": "/journal/",
+      "destination": "/dist/journal/index.html"
+    },
+    {
       "source": "/:path*",
       "destination": "/dist/:path*"
     }
