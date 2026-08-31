@@ -348,14 +348,38 @@ a.index__row:hover{background:rgba(239,234,224,.028)}
   color:var(--on-ink-3);margin-bottom:6px}
 .spec dd{margin:0;font-size:15.5px}
 
-/* --- footer ------------------------------------------------------------- */
-.foot{background:var(--ink-deep);padding-block:clamp(52px,8vh,96px)}
+/* --- footer ------------------------------------------------------------- */.foot{background:var(--ink-deep);padding-block:clamp(52px,8vh,96px)}
 .foot__top{display:grid;grid-template-columns:1fr;gap:clamp(30px,5vw,64px);align-items:start}
 @media(min-width:820px){.foot__top{grid-template-columns:minmax(0,.42fr) minmax(0,.58fr)}}
-.foot__nav{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
-@media(min-width:560px){.foot__nav{grid-template-columns:repeat(3,1fr)}}
-.foot__nav a{font-size:14.5px;color:var(--on-ink-2);padding-block:5px}
-.foot__nav a:hover{color:var(--on-ink)}
+.foot__nav{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px 24px;
+}
+
+@media(min-width:560px){
+  .foot__nav{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+.foot__nav > div{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:4px;
+}
+
+.foot__nav a{
+  display:block;
+  font-size:14.5px;
+  color:var(--on-ink-2);
+  padding-block:5px;
+}
+
+.foot__nav a:hover{
+  color:var(--on-ink);
+}
 .foot .brand svg{height:22px}
 .foot__base{margin-top:clamp(40px,6vh,72px);padding-top:18px;border-top:1px solid var(--hair-ink);
   display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline}
