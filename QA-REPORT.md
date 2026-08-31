@@ -61,7 +61,7 @@ to a case study that does not exist.
 | **Discuss a partnership** | `/booking/?engagement=partnership` — field preselected |
 | **Private enquiry** | `/enquiries/?engagement=house` — field preselected |
 | All work / All notes / Back to work | index pages |
-| enquiries@bestories.co.uk | valid `mailto:` |
+| hello@bestories.co.uk | valid `mailto:` |
 | bestories.co.uk (footer) | `/` |
 | Privacy / Terms | legal pages |
 

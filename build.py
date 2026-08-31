@@ -115,7 +115,7 @@ def footer():
             '<nav class="foot__nav" aria-label="Footer">%s</nav>'
             '</div>'
             '<div class="foot__base"><span class="meta">&copy; <span data-year>2026</span> Be Stories</span>'
-            '<a class="meta" href="mailto:enquiries@bestories.co.uk">enquiries@bestories.co.uk</a>'
+            '<a class="meta" href="mailto:hello@bestories.co.uk">hello@bestories.co.uk</a>'
             '<span class="meta">bestories.co.uk</span></div>'
             '</div></footer>'
             '<script src="/assets/js/site.js" defer></script></body></html>'
@@ -404,7 +404,7 @@ def build_home():
 """
     schema = {"@context": "https://schema.org", "@type": "Organization", "name": "Be Stories",
               "url": SITE, "logo": SITE + "/assets/logo/bs-01-master-positive.svg",
-              "email": "enquiries@bestories.co.uk",
+              "email": "hello@bestories.co.uk",
               "description": "A selective creative storytelling studio working alongside premium and "
                              "luxury brand teams.",
               "address": [{"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"},
@@ -610,8 +610,8 @@ def build_enquiries():
     <div class="stack"><h1 class="d1 rv" style="max-width:14ch">Prefer to write?</h1>
       <p class="lede rv" data-d="90" style="max-width:50ch">Tell us what you are working on and what you
         are trying to change. We read everything ourselves.</p>
-      <p class="rv" data-d="140"><a class="link" href="mailto:enquiries@bestories.co.uk">
-        enquiries@bestories.co.uk<span class="arw">&rarr;</span></a></p></div></div>
+      <p class="rv" data-d="140"><a class="link" href="mailto:hello@bestories.co.uk">
+        hello@bestories.co.uk<span class="arw">&rarr;</span></a></p></div></div>
 </section>
 <section class="band band--tight"><div class="shell cols cols--rail">
   <p class="meta">The brief</p>
@@ -693,7 +693,7 @@ def build_booking():
     </div>
     <div class="notice" hidden role="status" tabindex="-1"></div>
     <p class="formnote" style="margin-top:40px">Prefer to write? <a class="link" href="/enquiries/">Send an
-      enquiry</a> or email <a class="link" href="mailto:enquiries@bestories.co.uk">enquiries@bestories.co.uk</a>.</p>
+      enquiry</a> or email <a class="link" href="mailto:hello@bestories.co.uk">hello@bestories.co.uk</a>.</p>
   </div>
 </section>
 """
@@ -740,7 +740,7 @@ def build_manage():
     </div>
     <div class="notice" hidden role="status" tabindex="-1"></div>
     <p class="formnote" style="margin-top:40px">Any difficulty, write to
-      <a class="link" href="mailto:enquiries@bestories.co.uk">enquiries@bestories.co.uk</a>.</p>
+      <a class="link" href="mailto:hello@bestories.co.uk">hello@bestories.co.uk</a>.</p>
   </div>
 </section>
 """
@@ -771,7 +771,7 @@ LEGAL = {
  'privacy': ('Privacy', 'How Be Stories handles personal data.', [
    ('Who we are', ['Be Stories is a creative storytelling studio operating in London and Glasgow. '
                    'For any question about this notice, or to exercise any right described below, '
-                   'write to enquiries@bestories.co.uk.']),
+                   'write to hello@bestories.co.uk.']),
    ('What we collect', ['When you send an enquiry we collect the name, company, role, work email, '
                         'website, timing, indicative investment and the two written answers you '
                         'provide. When you book a conversation we collect the same identifying '
@@ -807,7 +807,7 @@ LEGAL = {
                  'to erase your data sooner and we will.']),
    ('Your rights', ['You may request access, correction, erasure, restriction, or a portable copy '
                     'of your data, and object to our processing of it, by writing to '
-                    'enquiries@bestories.co.uk. We respond within one month. You may also complain '
+                    'hello@bestories.co.uk. We respond within one month. You may also complain '
                     'to the Information Commissioner\u2019s Office at ico.org.uk.']),
  ]),
  'terms': ('Terms', 'Terms of use for bestories.co.uk.', [

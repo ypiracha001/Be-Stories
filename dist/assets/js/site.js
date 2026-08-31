@@ -199,7 +199,7 @@
         btn.disabled = false;
         btn.innerHTML = 'Send enquiry<span class="arw" aria-hidden="true">&rarr;</span>';
         notice(out, 'The studio inbox could not be reached, so nothing was sent. Please write to ' +
-          '<a class="link" href="mailto:enquiries@bestories.co.uk">enquiries@bestories.co.uk</a> ' +
+          '<a class="link" href="mailto:hello@bestories.co.uk">hello@bestories.co.uk</a> ' +
           'and we will pick it up from there.', true);
       });
     });
@@ -240,7 +240,7 @@
       if (!eventId || !token) {
         appt.innerHTML = '<span class="meta">This link is incomplete</span>';
         notice(out, 'Open the link from your calendar invitation, or write to ' +
-          '<a class="link" href="mailto:enquiries@bestories.co.uk">enquiries@bestories.co.uk</a>.', true);
+          '<a class="link" href="mailto:hello@bestories.co.uk">hello@bestories.co.uk</a>.', true);
         return;
       }
       fetch('/api/manage?e=' + encodeURIComponent(eventId) + '&t=' + encodeURIComponent(token))
@@ -257,7 +257,7 @@
         .catch(function () {
           appt.innerHTML = '<span class="meta">Booking not found</span>';
           notice(out, 'That booking could not be found \u2014 it may already have been cancelled. Write to ' +
-            '<a class="link" href="mailto:enquiries@bestories.co.uk">enquiries@bestories.co.uk</a> for help.', true);
+            '<a class="link" href="mailto:hello@bestories.co.uk">hello@bestories.co.uk</a> for help.', true);
         });
 
       var cancelBtn = qs('[data-cancel]', root);
@@ -273,7 +273,7 @@
             cancelBtn.disabled = false;
             cancelBtn.innerHTML = 'Cancel this conversation<span class="arw" aria-hidden="true">&rarr;</span>';
             notice(out, 'The cancellation did not go through. Please write to ' +
-              '<a class="link" href="mailto:enquiries@bestories.co.uk">enquiries@bestories.co.uk</a>.', true);
+              '<a class="link" href="mailto:hello@bestories.co.uk">hello@bestories.co.uk</a>.', true);
           });
         });
       }
@@ -403,11 +403,11 @@
             cache = {}; loadMonth();
           } else if (err.status === 503) {
             notice(out, 'The studio calendar is not connected yet, so nothing was booked. Write to ' +
-              '<a class="link" href="mailto:enquiries@bestories.co.uk">enquiries@bestories.co.uk</a> ' +
+              '<a class="link" href="mailto:hello@bestories.co.uk">hello@bestories.co.uk</a> ' +
               'and we will confirm by return.', true);
           } else {
             notice(out, 'That did not go through and nothing was booked. Please try again, or write to ' +
-              '<a class="link" href="mailto:enquiries@bestories.co.uk">enquiries@bestories.co.uk</a>.', true);
+              '<a class="link" href="mailto:hello@bestories.co.uk">hello@bestories.co.uk</a>.', true);
           }
         });
       });

@@ -82,7 +82,7 @@ DKIM `PASS`, DMARC `PASS`.
 
 ## 5. Transactional email sender
 
-The site sends from `enquiries@bestories.co.uk` via SMTP.
+The site sends from `hello@bestories.co.uk` via SMTP.
 
 - [ ] Choose one of:
       - **SMTP relay** — Admin console → Apps → Gmail → Routing → SMTP relay

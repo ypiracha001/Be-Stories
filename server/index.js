@@ -27,7 +27,7 @@ const {
   GOOGLE_REFRESH_TOKEN,
   GOOGLE_ACCOUNT = 'admin@bestories.co.uk',   // the Workspace identity that owns the calendar
   CALENDAR_ID = 'primary',                    // 'primary' = that account's own calendar
-  STUDIO_EMAIL = 'enquiries@bestories.co.uk', // correspondence address, not the calendar identity
+  STUDIO_EMAIL = 'hello@bestories.co.uk', // correspondence address, not the calendar identity
   STUDIO_ATTENDEES = '',                      // optional extra internal invitees, comma separated
   BOOKING_TZ = 'Europe/London',
   WORK_START = '10:00',

@@ -139,7 +139,7 @@ repository, a bucket, or anywhere a build log can print it.
 | `GOOGLE_REFRESH_TOKEN` | from step 3 |
 | `MANAGE_SECRET` | random string |
 | `PUBLIC_URL` | `https://bestories.co.uk` |
-| `STUDIO_EMAIL` | `enquiries@bestories.co.uk` |
+| `STUDIO_EMAIL` | `hello@bestories.co.uk` |
 | `STUDIO_ATTENDEES` | optional, e.g. `isra@bestories.co.uk` |
 | `SMTP_*` | for the enquiry form and confirmations |
 
