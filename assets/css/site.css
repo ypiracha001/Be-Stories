@@ -143,7 +143,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
    Enforced in CSS so no layout change can encroach on it. */
 .masthead .brand{padding-right:calc(17px * .68);min-height:calc(17px * 2.36)}
 .foot .brand{padding-block:calc(22px * .68)}
-.nav{display:none;gap:clamp(18px,2.4vw,34px);align-items:center}
+.nav{
+  display:none;
+  align-items:center;
+  column-gap:32px;
+}
 @media(min-width:900px){.nav{display:flex}}
 .nav a{font-size:13.5px;color:var(--on-ink-2);letter-spacing:-.004em;position:relative;padding-block:4px;
   transition:color var(--mid) var(--ease)}
