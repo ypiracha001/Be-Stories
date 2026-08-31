@@ -444,16 +444,26 @@ app.use((err, req, res, next) => {
 });
 app.use((req, res) => res.status(404).sendFile(path.join(DIST, '404.html')));
 
-app.listen(PORT, () => {
-  console.log(`be stories. listening on :${PORT}`);
-  console.log(configured
-    ? `Google Calendar: connected as ${GOOGLE_ACCOUNT} (calendar: ${CALENDAR_ID})`
-    : 'Google Calendar: NOT connected — see server/README.md');
-  const sc = audit();
-  console.log('Scopes: %s', short().join(' + '));
-  if (!sc.freebusy) console.log('  ⚠ no freebusy scope — availability will always be empty');
-  if (!sc.events) console.log('  ⚠ no events scope — bookings cannot be written');
-  if (sc.overbroad.length) console.log('  ⚠ wider than needed: %s', short(sc.overbroad).join(', '));
-  console.log(SMTP_HOST ? 'Mail: connected' : 'Mail: NOT connected — enquiry form and confirmations disabled');
-  if (!secret) console.log('MANAGE_SECRET unset — reschedule/cancel links disabled');
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`be stories. listening on :${PORT}`);
+    console.log(configured
+      ? `Google Calendar: connected as ${GOOGLE_ACCOUNT} (calendar: ${CALENDAR_ID})`
+      : 'Google Calendar: NOT connected — see server/README.md');
+
+    const sc = audit();
+    console.log('Scopes: %s', short().join(' + '));
+
+    if (!sc.freebusy) console.log('  ⚠ no freebusy scope — availability will always be empty');
+    if (!sc.events) console.log('  ⚠ no events scope — bookings cannot be written');
+    if (sc.overbroad.length) console.log('  ⚠ wider than needed: %s', short(sc.overbroad).join(', '));
+
+    console.log(SMTP_HOST
+      ? 'Mail: connected'
+      : 'Mail: NOT connected — enquiry form and confirmations disabled');
+
+    if (!secret) console.log('MANAGE_SECRET unset — reschedule/cancel links disabled');
+  });
+}
+
+module.exports = app;
