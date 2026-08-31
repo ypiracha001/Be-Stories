@@ -1,0 +1,44 @@
+[
+ {
+  "no": "01",
+  "title": "The Commission",
+  "line": "One focused campaign or launch, taken from creative strategy through to adapted assets.",
+  "includes": [
+   "Creative strategy",
+   "Story development",
+   "Creative direction",
+   "Production",
+   "Adaptation"
+  ],
+  "cta": "Discuss a commission",
+  "href": "/booking/?engagement=commission"
+ },
+ {
+  "no": "02",
+  "title": "The Partnership",
+  "line": "Ongoing creative support for an internal marketing or brand team, at whatever cadence the calendar demands.",
+  "includes": [
+   "Campaign development",
+   "Ongoing creative direction",
+   "Film and visual production",
+   "Creative scaling",
+   "Testing",
+   "Adaptation"
+  ],
+  "cta": "Discuss a partnership",
+  "href": "/booking/?engagement=partnership"
+ },
+ {
+  "no": "03",
+  "title": "The House",
+  "line": "Large-scale, multi-market or structurally complex creative briefs, run as a standing engagement.",
+  "includes": [
+   "Multi-market platforms",
+   "Category or portfolio work",
+   "Long-horizon brand building",
+   "Senior counsel"
+  ],
+  "cta": "Private enquiry",
+  "href": "/enquiries/?engagement=house"
+ }
+]

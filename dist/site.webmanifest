@@ -1,0 +1,15 @@
+{
+  "name": "Be Stories",
+  "short_name": "Be Stories",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#15130F",
+  "theme_color": "#15130F",
+  "icons": [
+    {
+      "src": "/assets/logo/bs-04-favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

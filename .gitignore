@@ -1,0 +1,7 @@
+
+server/.env
+server/.env.*
+!server/.env.example
+node_modules/
+__pycache__/
+*.pyc

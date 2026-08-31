@@ -1,0 +1,50 @@
+[
+ {
+  "slug": "creative-direction",
+  "title": "Creative Direction",
+  "line": "Giving the idea a point of view.",
+  "detail": "Most briefs arrive as a business problem and a deadline. Our first job is to convert that into a creative territory precise enough to make decisions from \u2014 one that your team can brief into, argue with, and hold suppliers to long after we have gone."
+ },
+ {
+  "slug": "brand-storytelling",
+  "title": "Brand Storytelling",
+  "line": "Finding the part people remember.",
+  "detail": "Positioning explains what a brand is. A story is what someone repeats to a friend six months later without being asked. We work to find the second one, and to make sure it is true enough that the business can stand behind it."
+ },
+ {
+  "slug": "campaign-development",
+  "title": "Campaign Development",
+  "line": "Turning one truth into a world.",
+  "detail": "A platform is not a headline. It is a structure with enough room inside it for two years of work, several markets and a product roadmap you have not written yet. We build for that, then pressure-test it against the calendar you actually have."
+ },
+ {
+  "slug": "film-and-motion",
+  "title": "Film & Motion",
+  "line": "Making the idea felt, not just seen.",
+  "detail": "Film language carries more brand information per second than any other medium: pace, framing, sound, restraint. We direct for the format the work will actually live in, not for a director's reel."
+ },
+ {
+  "slug": "ai-native-production",
+  "title": "AI-Native Production",
+  "line": "Expanding what can be made.",
+  "detail": "Used well, modern production removes the negotiation between an idea and its budget. Used badly, it produces volume nobody asked for. We treat it as infrastructure: it should be felt in what became possible, never visible as a style."
+ },
+ {
+  "slug": "creative-scaling",
+  "title": "Creative Scaling",
+  "line": "Keeping the idea intact as it travels.",
+  "detail": "The point of scale is compounding, not coverage. Every asset in the family should make the central idea more recognisable, which means designing the rules for variation before the first cutdown is made."
+ },
+ {
+  "slug": "paid-creative",
+  "title": "Paid Creative",
+  "line": "Performance without flattening the brand.",
+  "detail": "Performance creative and brand creative are usually run by different people with different incentives, which is how brands end up advertising against themselves. We build both from one territory so the efficient work still reads as the brand."
+ },
+ {
+  "slug": "global-adaptation",
+  "title": "Global Adaptation",
+  "line": "Scale without losing meaning.",
+  "detail": "Adaptation fails when it is treated as translation. We define which parts of a story are fixed and which are local, so market teams have genuine creative latitude without the identity drifting."
+ }
+]

@@ -1,0 +1,23 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build-and-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc      # single source: Node 24
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Install server dependencies
+        run: cd server && npm ci
+      - name: Unit tests
+        run: cd server && npm test
+      - name: Build site
+        run: python3 build.py
+      - name: Link and semantics audit
+        run: python3 audit.py       # exits non-zero on any dead link
+      - name: Assert no secrets in built output
+        run: |
+          ! grep -rIl "GOOGLE_CLIENT_SECRET\|GOOGLE_REFRESH_TOKEN\|MANAGE_SECRET\|SMTP_PASS" dist/

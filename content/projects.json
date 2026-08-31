@@ -1,0 +1,253 @@
+[
+ {
+  "slug": "maison-01",
+  "client": "Maison 01",
+  "category": "Fragrance",
+  "year": "2026",
+  "commission": "Concept Commission",
+  "statement": "The scent of the woman you become after midnight.",
+  "plate_note": "Film still \u2014 asset pending",
+  "chapters": [
+   {
+    "label": "The objective",
+    "head": "A house with heritage, and a fragrance nobody could describe.",
+    "text": [
+     "The brief as it arrived: relaunch a signature fragrance into a category where every competitor was buying the same three visual ideas \u2014 the shoreline, the silk, the slow-motion pour.",
+     "The commercial objective was recruitment. The creative objective, unstated, was to stop looking like everyone else while remaining unmistakably the house."
+    ]
+   },
+   {
+    "label": "What we heard",
+    "head": "The internal team already knew the answer.",
+    "text": [
+     "They had the customer research. They knew the fragrance was worn in the evening, by women buying it for themselves, and that the existing advertising was recruiting the wrong shopper.",
+     "What they did not have was permission \u2014 a creative territory precise enough to defend a departure to a board."
+    ]
+   },
+   {
+    "label": "The opportunity",
+    "head": "Stop advertising the scent. Advertise the hour.",
+    "text": [
+     "Fragrance advertising almost always describes the product or the woman. Very little of it describes the moment, and the moment is what the customer is actually buying.",
+     "Midnight is a threshold, not a time. It is the point at which someone becomes slightly more themselves."
+    ]
+   },
+   {
+    "label": "The idea",
+    "head": "After midnight, you are someone the daytime has not met.",
+    "text": [
+     "One line, one hour, one register: interior, private, unhurried. No shoreline, no silk, no pour.",
+     "The territory sets a rule the house can hold for years \u2014 every execution takes place after midnight, and nothing in frame explains itself."
+    ]
+   },
+   {
+    "label": "The world",
+    "head": "Low light, long lenses, and almost no dialogue.",
+    "text": [
+     "Film language: 2.39:1, available light, no camera movement that a person in the room could not have made. Sound leads \u2014 a room tone that arrives before the image.",
+     "Design: the house typography set unusually small against unusually large fields of black. Colour used once per film, never twice."
+    ]
+   }
+  ],
+  "system": [
+   "Hero film, 60 and 30 seconds",
+   "Six-part social sequence cut from the same negative",
+   "Product film for owned and retail",
+   "Launch print and out-of-home",
+   "In-store film for counter and window",
+   "Market adaptations across four territories"
+  ],
+  "outcome_head": "Developed as a creative proposition.",
+  "outcome": "Maison 01 is a Concept Commission: a territory and film language developed by the studio to demonstrate how the category can be approached differently. It was not produced for a client, and no results are claimed for it.",
+  "frame": "midnight",
+  "home": 2,
+  "crop": "portrait"
+ },
+ {
+  "slug": "grand-hotel-03",
+  "client": "Grand Hotel 03",
+  "category": "Hospitality",
+  "year": "2025",
+  "commission": "Concept Commission",
+  "statement": "Somewhere you disappear to.",
+  "chapters": [
+   {
+    "label": "The objective",
+    "head": "Occupancy is healthy. Cultural presence is not.",
+    "text": [
+     "A property with genuine architectural significance and a booking funnel doing its job \u2014 but no standing in the culture, and therefore no pricing power beyond the season.",
+     "The objective was reputation, measured over years rather than quarters."
+    ]
+   },
+   {
+    "label": "What we heard",
+    "head": "The building has better stories than the brand does.",
+    "text": [
+     "The commercial team had files of them: who stayed, what was written there, which suite was closed for a decade and why.",
+     "Hospitality marketing had been flattening all of that into amenity photography."
+    ]
+   },
+   {
+    "label": "The opportunity",
+    "head": "Publish the building, not the offer.",
+    "text": [
+     "Hotels that hold cultural weight do so because they are associated with work \u2014 books written, films cut, deals made.",
+     "That association can be built deliberately, if the brand is willing to spend on culture rather than on reach."
+    ]
+   },
+   {
+    "label": "The idea",
+    "head": "A house that keeps what happens inside it.",
+    "text": [
+     "The property positions itself as a keeper of work rather than a seller of nights.",
+     "Every expression is a record of something that happened there, which gives the brand an editorial engine instead of a campaign calendar."
+    ]
+   },
+   {
+    "label": "The world",
+    "head": "Architectural stillness, human traces, no guests in frame.",
+    "text": [
+     "Static compositions, natural light, long holds. Rooms are photographed after someone has left them.",
+     "Sound design carries the building: lifts, service doors, the particular acoustics of a stairwell."
+    ]
+   }
+  ],
+  "system": [
+   "Brand film",
+   "Room-by-room editorial series",
+   "Residency and commission programme identity",
+   "Print annual",
+   "Owned channel formats",
+   "Seasonal adaptation"
+  ],
+  "outcome_head": "Developed as a creative proposition.",
+  "outcome": "Grand Hotel 03 is a Concept Commission. It was developed by the studio to demonstrate an approach to cultural positioning in hospitality and was not produced for a client.",
+  "frame": "interior",
+  "home": 3,
+  "crop": "wide"
+ },
+ {
+  "slug": "orchard-04",
+  "client": "Orchard 04",
+  "category": "Luxury Food",
+  "year": "2026",
+  "commission": "Concept Commission",
+  "frame": "amber",
+  "home": 4,
+  "crop": "wide",
+  "statement": "A small moment of abundance.",
+  "chapters": [
+   {
+    "label": "The objective",
+    "head": "A house that sells the finest version of an everyday thing.",
+    "text": [
+     "Premium food marketing defaults to provenance and process \u2014 the farm, the hands, the heritage stamp. It is honest and it is entirely interchangeable.",
+     "The objective was to make the product desirable before it is explained."
+    ]
+   },
+   {
+    "label": "What we heard",
+    "head": "The team already knew when the product mattered most.",
+    "text": [
+     "Not at purchase. At the moment it is offered to someone else \u2014 the plate put down in front of a guest, the box opened at the end of a meal.",
+     "That moment was absent from every asset the brand had made."
+    ]
+   },
+   {
+    "label": "The opportunity",
+    "head": "Photograph generosity, not produce.",
+    "text": [
+     "Abundance is an emotional register, and it is one almost nobody in the category is using. It reframes a small expensive object as a gesture rather than a purchase."
+    ]
+   },
+   {
+    "label": "The idea",
+    "head": "A small moment of abundance.",
+    "text": [
+     "Everything is shot at the scale of an offering: close, warm, unhurried, and always at the point of being given away."
+    ]
+   },
+   {
+    "label": "The world",
+    "head": "Mahogany, amber light, and shadow doing most of the work.",
+    "text": [
+     "Macro at shallow depth. A single warm key from low right, everything else falling into black. Nothing is lit to be seen clearly; it is lit to be wanted.",
+     "Movement is slow and physical \u2014 fruit turning, a fall through light, oil catching a highlight and losing it."
+    ]
+   }
+  ],
+  "system": [
+   "Hero film",
+   "Product film for owned and retail",
+   "Six-part social sequence",
+   "Gifting and seasonal formats",
+   "Packaging and in-store",
+   "Market adaptations"
+  ],
+  "outcome_head": "Developed as a creative proposition.",
+  "outcome": "Orchard 04 is a Concept Commission developed by the studio to demonstrate an approach to luxury food. It was not produced for a client and no results are claimed for it."
+ },
+ {
+  "slug": "atelier-02",
+  "client": "Atelier 02",
+  "category": "Fine jewellery",
+  "year": "2026",
+  "commission": "Concept Commission",
+  "statement": "Inheritance is a design brief nobody writes down.",
+  "chapters": [
+   {
+    "label": "The objective",
+    "head": "A category that sells occasions, for a house that makes objects.",
+    "text": [
+     "Fine jewellery marketing is organised around moments of purchase \u2014 the proposal, the anniversary, the milestone. It is efficient and it is finite.",
+     "The objective was to build a story that survives past the occasion and gives the house something to say for the other fifty weeks of the year."
+    ]
+   },
+   {
+    "label": "What we heard",
+    "head": "The most valuable pieces are the ones that get handed on.",
+    "text": [
+     "The team's own archive told the story better than any campaign had: repairs, resizings, pieces returned to the workshop a generation after they left it.",
+     "That service record was the brand asset. Nobody had thought to point a camera at it."
+    ]
+   },
+   {
+    "label": "The opportunity",
+    "head": "Design for the second owner.",
+    "text": [
+     "If a piece is made to be inherited, then every decision \u2014 weight, clasp, the way it wears \u2014 is being made for someone who has not been born yet.",
+     "That is a genuinely unusual position for a luxury brand to take, and it is defensible because it is true of how the objects are actually made."
+    ]
+   },
+   {
+    "label": "The idea",
+    "head": "Made for the person who gets it next.",
+    "text": [
+     "The campaign is addressed forward in time. Every film is a piece of correspondence to a future owner.",
+     "It reframes price without ever discussing price, which is the only respectable way for a luxury brand to discuss price."
+    ]
+   },
+   {
+    "label": "The world",
+    "head": "Workshop light, hands, and the passage of time made literal.",
+    "text": [
+     "Macro and mid, never wide. Skin and metal at the same exposure. The only movement in frame belongs to hands.",
+     "Typography sits in the lower field, letterspaced tightly, as though written rather than set."
+    ]
+   }
+  ],
+  "system": [
+   "Anthology of three short films",
+   "Archive series for owned channels",
+   "Retail and window",
+   "Editorial partnership format",
+   "Care-and-repair service communications",
+   "Regional adaptation kit"
+  ],
+  "outcome_head": "Developed as a creative proposition.",
+  "outcome": "Atelier 02 is a Concept Commission developed by the studio. It has not been produced for a client and no performance results are claimed.",
+  "frame": "metal",
+  "home": 0,
+  "crop": "portrait"
+ }
+]
