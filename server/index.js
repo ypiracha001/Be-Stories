@@ -290,27 +290,33 @@ app.post('/api/book', writeGuards, async (req, res) => {
     /* Google sends the invitation itself (sendUpdates: 'all'). This is the
        studio's own confirmation, and it is the only place the manage link
        is issued. If SMTP is not configured the booking still stands. */
-    const tx = mailer();
-    if (tx) {
-      const when = start.toLocaleString('en-GB', { timeZone: b.timezone || BOOKING_TZ });
-      tx.sendMail({
-        from: `Be Stories <${STUDIO_EMAIL}>`,
-        to: b.email,
-        cc: STUDIO_EMAIL,
-        replyTo: STUDIO_EMAIL,
-        subject: 'Be Stories — Introductory Conversation',
-        text: [
-          `${b.name},`, '',
-          'Your conversation with the studio is confirmed.', '',
-          `When: ${when} (${b.timezone || BOOKING_TZ})`,
-          'Duration: 30 minutes',
-          meetLink ? `Google Meet: ${meetLink}` : '',
-          '', `Reschedule or cancel: ${manage}`,
-          '', 'Be Stories', 'bestories.co.uk',
-        ].filter(Boolean).join('\n'),
-      }).catch(err => console.error('confirmation mail', err.message));
-    }
+      const tx = mailer();
+      if (tx) {
+        const when = start.toLocaleString('en-GB', {
+          timeZone: b.timezone || BOOKING_TZ
+        });
 
+        try {
+          await tx.sendMail({
+            from: `Be Stories <${STUDIO_EMAIL}>`,
+            to: b.email,
+            cc: STUDIO_EMAIL,
+            replyTo: STUDIO_EMAIL,
+            subject: 'Be Stories — Introductory Conversation',
+            text: [
+              `${b.name}`, '',
+              'Your conversation with the studio is confirmed.', '',
+              `When: ${when} (${b.timezone || BOOKING_TZ})`,
+              'Duration: 30 minutes',
+              meetLink ? `Google Meet: ${meetLink}` : '',
+              '', `Reschedule or cancel: ${manage}`,
+              '', 'Be Stories', 'bestories.co.uk',
+            ].filter(Boolean).join('\n'),
+          });
+        } catch (err) {
+          console.error('confirmation mail', err.message);
+        }
+      }
     res.json({
       ok: true,
       meet: meetLink,
