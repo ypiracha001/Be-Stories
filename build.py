@@ -598,7 +598,18 @@ def build_journal():
 """
         page('/journal/%s/' % j['slug'], '%s — Be Stories' % j['title'], j['dek'], b,
              active='/journal/', og_type='article', schema=schema)
+    # Use the finished Journal HTML pages exactly as supplied.
+    journal_pages = os.path.join(ROOT, 'content', 'journal', 'pages')
 
+    for j in C['journal']:
+        src = os.path.join(journal_pages, j['slug'] + '.html')
+        dst = os.path.join(DIST, 'journal', j['slug'], 'index.html')
+
+        if not os.path.exists(src):
+            raise FileNotFoundError('Missing Journal page: ' + src)
+
+        os.makedirs(os.path.dirname(dst), exist_ok=True)
+        shutil.copyfile(src, dst)
 # ---------------------------------------------------------------- enquiries
 def build_enquiries():
     ranges = ['\u00a310k\u2013\u00a325k', '\u00a325k\u2013\u00a350k', '\u00a350k\u2013\u00a3100k',
