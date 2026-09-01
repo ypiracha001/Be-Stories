@@ -17,20 +17,20 @@
       "destination": "/dist/booking/index.html"
     },
     {
-      "source": "/enquiries",
-      "destination": "/dist/enquiries/index.html"
+      "source": "/journal",
+      "destination": "/dist/journal/index.html"
     },
     {
-      "source": "/enquiries/",
-      "destination": "/dist/enquiries/index.html"
+      "source": "/journal/",
+      "destination": "/dist/journal/index.html"
     },
     {
-      "source": "/manage",
-      "destination": "/dist/manage/index.html"
+      "source": "/journal/:slug",
+      "destination": "/dist/journal/:slug/index.html"
     },
     {
-      "source": "/manage/",
-      "destination": "/dist/manage/index.html"
+      "source": "/journal/:slug/",
+      "destination": "/dist/journal/:slug/index.html"
     },
     {
       "source": "/work",
@@ -39,6 +39,14 @@
     {
       "source": "/work/",
       "destination": "/dist/work/index.html"
+    },
+    {
+      "source": "/work/:slug",
+      "destination": "/dist/work/:slug/index.html"
+    },
+    {
+      "source": "/work/:slug/",
+      "destination": "/dist/work/:slug/index.html"
     },
     {
       "source": "/studio",
@@ -57,6 +65,22 @@
       "destination": "/dist/capabilities/index.html"
     },
     {
+      "source": "/enquiries",
+      "destination": "/dist/enquiries/index.html"
+    },
+    {
+      "source": "/enquiries/",
+      "destination": "/dist/enquiries/index.html"
+    },
+    {
+      "source": "/manage",
+      "destination": "/dist/manage/index.html"
+    },
+    {
+      "source": "/manage/",
+      "destination": "/dist/manage/index.html"
+    },
+    {
       "source": "/privacy",
       "destination": "/dist/privacy/index.html"
     },
@@ -73,16 +97,20 @@
       "destination": "/dist/terms/index.html"
     },
     {
-      "source": "/journal",
-      "destination": "/dist/journal/index.html"
+      "source": "/assets/:path*",
+      "destination": "/dist/assets/:path*"
     },
     {
-      "source": "/journal/",
-      "destination": "/dist/journal/index.html"
+      "source": "/robots.txt",
+      "destination": "/dist/robots.txt"
     },
     {
-      "source": "/:path*",
-      "destination": "/dist/:path*"
+      "source": "/sitemap.xml",
+      "destination": "/dist/sitemap.xml"
+    },
+    {
+      "source": "/site.webmanifest",
+      "destination": "/dist/site.webmanifest"
     }
   ]
 }
