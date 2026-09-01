@@ -572,16 +572,16 @@ def build_journal():
          'of desire.', body, active='/journal/')
 
     for j in C['journal']:
-        blocks = ''
-        for b in j['body']:
-            if b['t'] == 'h': blocks += '<h2>%s</h2>' % b['v']
-            elif b['t'] == 'q': blocks += '<blockquote>%s</blockquote>' % b['v']
-            else: blocks += '<p>%s</p>' % b['v']
+        body_path = os.path.join(ROOT, 'content', 'journal', j['body_file'])
+        with open(body_path, encoding='utf-8') as f:
+            blocks = f.read()
+
         schema = {"@context": "https://schema.org", "@type": "Article", "headline": j['title'],
                   "description": j['dek'], "datePublished": j['date'],
                   "author": {"@type": "Organization", "name": "Be Stories"},
                   "publisher": {"@type": "Organization", "name": "Be Stories"},
                   "mainEntityOfPage": SITE + '/journal/%s/' % j['slug']}
+
         b = f"""
 <section class="band" style="padding-top:clamp(120px,18vh,200px);padding-bottom:0">
   <div class="shell">

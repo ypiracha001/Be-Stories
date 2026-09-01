@@ -564,3 +564,13 @@ body.veiled .masthead{opacity:0;pointer-events:none;transition:opacity 600ms var
 .appt dd{margin:0;font-size:15.5px}
 .danger{color:var(--on-ink-2)}
 .danger:hover{color:var(--on-ink)}
+
+/* --- long-form reading measure -----------------------------------------
+   Reading size only. No new colours, weights or families. */
+.article{font-size:17px;line-height:1.72;max-width:34em}
+.article p{margin:0 0 1.35em}
+.article h2{margin:2.6em 0 .85em}
+.article h2+p{margin-top:0}
+.article .dek{margin-bottom:2.2em}
+@media(min-width:900px){.article{font-size:17.5px}}
+
