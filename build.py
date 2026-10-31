@@ -218,7 +218,7 @@ def stmt(a, b):
 # ---------------------------------------------------------------- home
 def build_home():
     home = sorted([p for p in C['projects'] if p.get('home')], key=lambda x: x['home'])
-    lead = [p for p in C['projects'] if p['slug'] == 'orchard-04'][0]
+    lead = [p for p in C['projects'] if p['slug'] == 'atelier-02'][0]
     caps = ''.join(
         '<a class="index__row rv" data-d="%d" href="/capabilities/#%s">'
         '<span class="meta">%02d</span><h3>%s</h3><p>%s</p></a>'
