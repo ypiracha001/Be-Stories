@@ -178,10 +178,10 @@ LOCK = ('<svg class="frame__lock" viewBox="0 0 24 24" aria-hidden="true">'
 def frame(kind, cls='', note='Frame pending', sealed=False):
     """An art-directed light study holding the place of film not yet shot.
        Composed per project: key direction, temperature, falloff.
-       sealed=True marks the film as under commission instead of pending.
+       sealed=True marks the film as in development instead of pending.
        To drop in the real thing, replace .frame__light with <video> or <picture>."""
     if sealed:
-        n = ('<div class="frame__seal">%s<span class="frame__seal-label">Under commission</span></div>'
+        n = ('<div class="frame__seal">%s<span class="frame__seal-label">In development</span></div>'
              % LOCK)
     else:
         n = ('<span class="frame__note">%s</span>' % note) if (SHOW_ASSET_NOTES and note) else ''
