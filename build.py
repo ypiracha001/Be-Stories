@@ -240,7 +240,7 @@ def build_home():
         '<a class="index__row rv" href="/journal/%s/"><span class="meta">%s</span>'
         '<h3>%s</h3><p>%s</p></a>' % (j['slug'], j['date_label'], j['title'], j['dek'])
         for j in C['journal'][:3])
-    worlds = ''.join(world(p, i) for i, p in enumerate(home))
+    worlds = ''.join(world(p, i, sealed=True) for i, p in enumerate(home))
 
     body = f"""
 <section class="hero">
