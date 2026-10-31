@@ -220,19 +220,18 @@ def build_home():
     home = sorted([p for p in C['projects'] if p.get('home')], key=lambda x: x['home'])
     caps = ''.join(
         '<a class="index__row rv" data-d="%d" href="/capabilities/#%s">'
-        '<span class="meta">%02d</span><h3>%s</h3><p>%s</p></a>'
-        % ((i % 4) * 60, c['slug'], i + 1, c['title'], c['line'])
+        '<h3>%s</h3><p>%s</p></a>'
+        % ((i % 4) * 60, c['slug'], c['title'], c['line'])
         for i, c in enumerate(C['capabilities']))
     method = ''.join(
         '<div class="index__row rv" data-d="%d"><span class="meta meta--amber">%s</span>'
         '<h3>%s</h3><p>%s</p></div>' % ((i % 3) * 70, m['no'], m['title'], m['line'])
         for i, m in enumerate(C['method']))
     ways = ''.join(
-        '<div class="way rv"><div><span class="meta meta--amber">%s</span>'
-        '<h3 class="d3" style="margin-top:12px">%s</h3></div>'
+        '<div class="way rv"><div><h3 class="d3">%s</h3></div>'
         '<div><p class="body" style="margin:0 0 14px">%s</p><ul>%s</ul></div>'
         '<div><a class="link" href="%s">%s<span class="arw">&rarr;</span></a></div></div>'
-        % (e['no'], e['title'], e['line'], ''.join('<li>%s</li>' % x for x in e['includes']),
+        % (e['title'], e['line'], ''.join('<li>%s</li>' % x for x in e['includes']),
            e['href'], e['cta'])
         for e in C['engagements'])
     journal = ''.join(
@@ -332,7 +331,7 @@ def build_home():
       <p class="meta">05</p>
       <div><h2 class="d3 rv tight">What we bring to the room.</h2></div>
     </div>
-    <div class="index" style="margin-top:clamp(28px,4vh,52px)">{caps}</div>
+    <div class="index index--plain" style="margin-top:clamp(28px,4vh,52px)">{caps}</div>
   </div>
 </section>
 

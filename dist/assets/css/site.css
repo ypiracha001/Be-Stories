@@ -239,6 +239,8 @@ a.exhibit:hover .plate img{transform:scale(1.022)}
 @media(min-width:820px){
   .index__row{grid-template-columns:64px minmax(0,.36fr) minmax(0,1fr);
     gap:clamp(20px,3vw,48px);align-items:baseline}
+  /* unordered sets carry no ordinal: only chapters and the method are counted */
+  .index--plain .index__row{grid-template-columns:minmax(0,.36fr) minmax(0,1fr)}
 }
 a.index__row:hover{background:rgba(239,234,224,.028)}
 .paper a.index__row:hover,.bone a.index__row:hover{background:rgba(21,19,15,.028)}

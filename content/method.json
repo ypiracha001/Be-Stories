@@ -1,8 +1,8 @@
 [
- {"no":"01","title":"Listen","line":"Understand strategy, audience, brand codes and commercial objectives."},
- {"no":"02","title":"Distil","line":"Find the emotional truth inside the brief."},
- {"no":"03","title":"Develop","line":"Turn that truth into a compelling creative territory."},
- {"no":"04","title":"Build","line":"Create the story, visual world and production system."},
- {"no":"05","title":"Produce","line":"Bring the idea to life using the strongest production method available."},
- {"no":"06","title":"Scale","line":"Extend the central idea intelligently across channels, markets and formats."}
+ {"no":"I","title":"Listen","line":"Understand strategy, audience, brand codes and commercial objectives."},
+ {"no":"II","title":"Distil","line":"Find the emotional truth inside the brief."},
+ {"no":"III","title":"Develop","line":"Turn that truth into a compelling creative territory."},
+ {"no":"IV","title":"Build","line":"Create the story, visual world and production system."},
+ {"no":"V","title":"Produce","line":"Bring the idea to life using the strongest production method available."},
+ {"no":"VI","title":"Scale","line":"Extend the central idea intelligently across channels, markets and formats."}
 ]
