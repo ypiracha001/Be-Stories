@@ -466,9 +466,6 @@ a.world:hover .frame__lock{opacity:1}
 
 /* --- work interruption --------------------------------------------------- */
 .interrupt{position:relative}
-.interrupt__cap{position:absolute;z-index:5;left:var(--gut);bottom:clamp(26px,5vh,52px);
-  right:var(--gut);display:flex;gap:14px;flex-wrap:wrap;align-items:baseline}
-.interrupt__cap .meta{color:rgba(239,234,224,.5)}
 
 /* --- exhibition worlds --------------------------------------------------- */
 .world{position:relative;padding-block:clamp(48px,9vh,120px)}

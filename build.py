@@ -218,7 +218,6 @@ def stmt(a, b):
 # ---------------------------------------------------------------- home
 def build_home():
     home = sorted([p for p in C['projects'] if p.get('home')], key=lambda x: x['home'])
-    lead = [p for p in C['projects'] if p['slug'] == 'atelier-02'][0]
     caps = ''.join(
         '<a class="index__row rv" data-d="%d" href="/capabilities/#%s">'
         '<span class="meta">%02d</span><h3>%s</h3><p>%s</p></a>'
@@ -275,13 +274,8 @@ def build_home():
   </div>
 </section>
 
-<section class="interrupt">
-  {frame(lead['frame'], 'frame--bleed frame--full')}
-  <div class="interrupt__cap">
-    <span class="pill">{lead['commission']}</span>
-    <span class="meta">{lead['category']}</span>
-    <span class="meta">{lead['statement']}</span>
-  </div>
+<section class="interrupt" aria-hidden="true">
+  {frame('metal', 'frame--bleed frame--full', note='')}
 </section>
 
 <section class="band">
