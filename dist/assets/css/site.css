@@ -413,6 +413,18 @@ a.index__row:hover{background:rgba(239,234,224,.028)}
 .frame__note{position:absolute;left:clamp(14px,2vw,24px);bottom:clamp(12px,2vw,20px);z-index:4;
   font-family:var(--meta);font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;
   color:rgba(239,234,224,.3)}
+/* under commission: a sealed frame. Hairline lock, one meta line, nothing else. */
+.frame__seal{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:clamp(14px,1.6vw,20px);pointer-events:none}
+.frame__lock{width:clamp(22px,2.2vw,30px);height:auto;fill:none;stroke:var(--on-ink);
+  stroke-width:1;stroke-linecap:round;stroke-linejoin:round;opacity:.78;
+  transition:opacity 1200ms var(--ease)}
+.frame__seal-label{font-family:var(--meta);font-size:10px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--on-ink-2);padding-top:clamp(12px,1.4vw,16px);
+  position:relative}
+.frame__seal-label::before{content:"";position:absolute;top:0;left:50%;width:24px;height:1px;
+  margin-left:-12px;background:var(--amber-rev);opacity:.7}
+a.world:hover .frame__lock{opacity:1}
 @media (prefers-reduced-motion:no-preference){
   .frame__light{animation:drift 34s var(--ease) infinite alternate}
 }

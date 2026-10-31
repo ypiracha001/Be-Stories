@@ -170,15 +170,25 @@ def field(fid, label, name, kind='text', required=False, hint=None, options=None
 def plate(kind='', note='Film still — asset pending'):
     return ('<div class="plate %s"><span class="plate__note meta">%s</span></div>' % (kind, note))
 
-def frame(kind, cls='', note='Frame pending'):
+LOCK = ('<svg class="frame__lock" viewBox="0 0 24 24" aria-hidden="true">'
+        '<path d="M7.5 10.5V8a4.5 4.5 0 0 1 9 0v2.5"/>'
+        '<rect x="5" y="10.5" width="14" height="10" rx="1"/>'
+        '<path d="M12 14.5v2.5"/></svg>')
+
+def frame(kind, cls='', note='Frame pending', sealed=False):
     """An art-directed light study holding the place of film not yet shot.
        Composed per project: key direction, temperature, falloff.
+       sealed=True marks the film as under commission instead of pending.
        To drop in the real thing, replace .frame__light with <video> or <picture>."""
-    n = ('<span class="frame__note">%s</span>' % note) if (SHOW_ASSET_NOTES and note) else ''
+    if sealed:
+        n = ('<div class="frame__seal">%s<span class="frame__seal-label">Under commission</span></div>'
+             % LOCK)
+    else:
+        n = ('<span class="frame__note">%s</span>' % note) if (SHOW_ASSET_NOTES and note) else ''
     return ('<div class="frame frame--%s %s"><div class="frame__light" aria-hidden="true"></div>'
             '<div class="frame__grain" aria-hidden="true"></div>%s</div>' % (kind, cls, n))
 
-def world(p, i):
+def world(p, i, sealed=False):
     """A project as a world you enter: metadata, one line, then the frame."""
     return ('<a class="world rv" href="/work/%s/" data-d="%d">'
             '<div class="shell"><div class="world__meta">'
@@ -188,7 +198,7 @@ def world(p, i):
             '<div class="shell world__more"><span class="link">See the world'
             '<span class="arw">&rarr;</span></span></div></a>'
             % (p['slug'], (i % 3) * 60, p['commission'], p['category'], p['year'],
-               p['statement'], frame(p['frame'], 'frame--bleed frame--' + p['crop'])))
+               p['statement'], frame(p['frame'], 'frame--bleed frame--' + p['crop'], sealed=sealed)))
 
 def exhibit(p, i, tag='a', bone=False):
     href = '/work/%s/' % p['slug']
@@ -418,7 +428,7 @@ def build_home():
 
 # ---------------------------------------------------------------- work
 def build_work():
-    items = ''.join(world(p, i) for i, p in enumerate(C['projects']))
+    items = ''.join(world(p, i, sealed=True) for i, p in enumerate(C['projects']))
     body = f"""
 <section class="band" style="padding-top:clamp(120px,18vh,220px)">
   <div class="shell cols cols--rail">
@@ -449,7 +459,7 @@ def build_work():
   <div class="shell">
     <p class="meta rv">{p['client']} &middot; {p['category']} &middot; {p['year']}</p>
     <h1 class="d1 rv" data-d="80" style="margin-top:24px;max-width:16ch">{p['statement']}</h1>
-    <div class="rv" data-d="160" style="margin-top:clamp(32px,5vh,60px)">{frame(p['frame'], 'frame--wide')}</div>
+    <div class="rv" data-d="160" style="margin-top:clamp(32px,5vh,60px)">{frame(p['frame'], 'frame--wide', sealed=True)}</div>
     <dl class="spec" style="margin-top:clamp(28px,4vh,48px)">
       <div><dt>Client</dt><dd>{p['client']}</dd></div>
       <div><dt>Category</dt><dd>{p['category']}</dd></div>
