@@ -97,12 +97,12 @@
       "destination": "/dist/terms/index.html"
     },
     {
-      "source": "/brief/:slug",
-      "destination": "/dist/brief/:slug/index.html"
+      "source": "/briefsubmission-alpine",
+      "destination": "/dist/briefsubmission-alpine/index.html"
     },
     {
-      "source": "/brief/:slug/",
-      "destination": "/dist/brief/:slug/index.html"
+      "source": "/briefsubmission-alpine/",
+      "destination": "/dist/briefsubmission-alpine/index.html"
     },
     {
       "source": "/assets/:path*",
@@ -123,7 +123,7 @@
   ],
   "headers": [
     {
-      "source": "/brief/:path*",
+      "source": "/briefsubmission-alpine",
       "headers": [
         {
           "key": "X-Robots-Tag",
@@ -134,6 +134,26 @@
           "value": "no-referrer"
         }
       ]
+    },
+    {
+      "source": "/briefsubmission-alpine/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/brief/winter-ti7me5b8qw/:rest*",
+      "destination": "/briefsubmission-alpine",
+      "permanent": true
     }
   ]
 }
