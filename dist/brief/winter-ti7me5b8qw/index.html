@@ -1,0 +1,743 @@
+<!doctype html><html><head><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Winter Campaign Brief</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one framed sheet — header band, a 2×2 grid of the four brief items, a footer with progress and submit */
+:root{
+  --ground:#E8EAEB;
+  --paper:#FAFAF9;
+  --ink:#141618;
+  --ink-2:rgba(20,22,24,.74);
+  --ink-3:rgba(20,22,24,.58);
+  --rule:rgba(20,22,24,.14);
+  --wash:rgba(20,22,24,.04);
+  --on-ink:#FAFAF9;
+  --alert:#A3302B;
+  --sans:"Hanken Grotesk","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  /* Grade strips: content colours describing each look, identical in both themes */
+  --g-stark-1:#0E1013;--g-stark-2:#272C33;--g-stark-3:#525A64;--g-stark-4:#9AA2AA;--g-stark-5:#E4E7EA;
+  --g-adren-1:#2F4E6B;--g-adren-2:#7FA6C4;--g-adren-3:#C9DDEC;--g-adren-4:#EEF5FA;--g-adren-5:#FFFFFF;
+  --g-apres-1:#3B2A20;--g-apres-2:#7A573E;--g-apres-3:#BE9466;--g-apres-4:#E3C79C;--g-apres-5:#F5E8D2;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0A0B0C;--paper:#131517;--ink:#E8EAEB;
+    --ink-2:rgba(232,234,235,.76);--ink-3:rgba(232,234,235,.56);
+    --rule:rgba(232,234,235,.16);--wash:rgba(232,234,235,.05);
+    --on-ink:#131517;--alert:#EC9A92;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0A0B0C;--paper:#131517;--ink:#E8EAEB;
+  --ink-2:rgba(232,234,235,.76);--ink-3:rgba(232,234,235,.56);
+  --rule:rgba(232,234,235,.16);--wash:rgba(232,234,235,.05);
+  --on-ink:#131517;--alert:#EC9A92;color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.wrap{max-width:1200px;margin:0 auto;padding-block:clamp(16px,4vw,44px);padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.sheet{background:var(--paper);border:1px solid var(--rule);padding:clamp(20px,4vw,48px);display:grid;gap:clamp(28px,3.6vw,44px)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:-1px}
+
+/* Mono: architectural information only — indices, labels, specs, folios */
+.meta,.label,.idx,.spec,.why b,.progress,.legal,.rec-date,.summary dt{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 20px;font-size:11px;color:var(--ink-3);padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.meta a{color:var(--ink);text-underline-offset:3px}
+
+.intro{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:end;margin-top:clamp(22px,3vw,34px)}
+h1{font-size:clamp(30px,4.3vw,48px);line-height:1.04;letter-spacing:-.025em;font-weight:500;margin:0;text-wrap:balance}
+.lede{margin:16px 0 0;color:var(--ink-2);max-width:44ch;font-size:16px}
+.who{display:grid;gap:20px}
+
+.field{display:grid;gap:4px;min-width:0}
+.label{font-size:11px;color:var(--ink-3)}
+input[type="text"],input[type="url"]{font:inherit;font-size:16px;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--rule);border-radius:0;padding:8px 0 9px;width:100%;min-width:0;transition:border-color .15s,box-shadow .15s}
+input::placeholder{color:var(--ink-3);opacity:.85}
+input[type="text"]:hover,input[type="url"]:hover{border-bottom-color:var(--ink-3)}
+input[type="text"]:focus,input[type="url"]:focus{outline:none;border-bottom-color:var(--ink);box-shadow:0 1px 0 0 var(--ink)}
+input[aria-invalid="true"]{border-bottom-color:var(--alert)}
+.err{margin:2px 0 0;font-size:13px;line-height:1.4;color:var(--alert)}
+
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(30px,3.6vw,46px) clamp(24px,4vw,64px)}
+.item{display:grid;gap:16px;align-content:start;border-top:1px solid var(--ink);padding-top:14px;min-width:0}
+.item-head{display:flex;align-items:baseline;gap:14px}
+.idx{font-size:12px;color:var(--ink-3)}
+h2{font-size:20px;line-height:1.25;font-weight:500;letter-spacing:-.01em;margin:0}
+.ask{margin:0;color:var(--ink-2);font-size:15px;max-width:58ch}
+
+fieldset{border:0;margin:0;padding:0;min-width:0}
+.options{display:grid;gap:8px}
+.opt{position:relative;display:grid;grid-template-columns:72px minmax(0,1fr) 16px;gap:16px;align-items:center;padding:10px 16px 10px 10px;border:1px solid var(--rule);border-radius:2px;cursor:pointer;transition:border-color .15s,background-color .15s}
+.opt:hover{border-color:var(--ink-3)}
+.opt:has(input:checked){border-color:var(--ink);background:var(--wash)}
+.opt:has(input:focus-visible){outline:2px solid var(--ink);outline-offset:2px}
+.options.invalid .opt{border-color:var(--alert)}
+.opt input,.check input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.otext{display:grid;gap:2px;min-width:0}
+.otext b{font-weight:500;font-size:15.5px;line-height:1.35}
+.otext .d{font-size:14px;line-height:1.45;color:var(--ink-2)}
+.spec{font-size:10.5px;color:var(--ink-3);margin-top:3px}
+.dot{width:16px;height:16px;border-radius:50%;border:1px solid var(--ink-3);display:grid;place-items:center}
+.opt:has(input:checked) .dot{border-color:var(--ink)}
+.opt:has(input:checked) .dot::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--ink)}
+
+.grade{display:grid;grid-template-columns:repeat(5,1fr);height:46px;border:1px solid var(--rule)}
+.item.wide{grid-column:1/-1}
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px clamp(24px,4vw,64px);align-items:start}
+.split > div{display:grid;gap:16px;align-content:start;min-width:0}
+.wave{height:46px;display:flex;align-items:center;justify-content:space-between;padding:0 6px}
+.wave i{width:2px;border-radius:1px;background:var(--ink);flex:none}
+.frames{height:46px;display:flex;align-items:center;justify-content:center}
+.fr{border:1.5px solid var(--ink);border-radius:1px;background:var(--paper);flex:none}
+.fr.v{width:22.5px;height:40px}
+.fr.h{width:40px;height:22.5px}
+.frames.both .fr.h{margin-left:-12px;margin-top:12px}
+
+.checks{display:grid;gap:10px}
+.check{position:relative;display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;align-items:start;cursor:pointer}
+.box{width:16px;height:16px;border:1px solid var(--ink-3);border-radius:2px;margin-top:3px;display:grid;place-items:center;transition:background-color .15s,border-color .15s}
+.check:hover .box{border-color:var(--ink)}
+.check:has(input:checked) .box{background:var(--ink);border-color:var(--ink)}
+.check:has(input:checked) .box::after{content:"";width:8px;height:4px;border-left:1.5px solid var(--on-ink);border-bottom:1.5px solid var(--on-ink);transform:translateY(-1px) rotate(-45deg)}
+.check:has(input:focus-visible) .box{outline:2px solid var(--ink);outline-offset:2px}
+.ctext{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;min-width:0}
+.ctext b{font-weight:500;font-size:15px}
+.ctext .spec{margin:0}
+
+.refs{display:grid;gap:18px}
+.why{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:baseline;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+.why b{font-weight:400;font-size:10.5px;color:var(--ink-3);white-space:nowrap}
+
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 32px;border-top:1px solid var(--rule);padding-top:22px}
+.progress{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:11px;color:var(--ink-3)}
+.progress li{display:flex;align-items:center;gap:8px;transition:color .15s}
+.pdot{width:9px;height:9px;border-radius:50%;border:1px solid currentColor;transition:background-color .15s}
+.progress li.ok{color:var(--ink)}
+.progress li.ok .pdot{background:var(--ink);border-color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:12px 18px;margin-left:auto}
+.status{margin:0;font-size:13.5px;color:var(--ink-2)}
+.status.bad{color:var(--alert)}
+
+button,.btn{font:inherit;font-size:15px;font-weight:500;line-height:1.2;cursor:pointer;border-radius:2px;padding:14px 28px;border:1px solid var(--ink);background:var(--ink);color:var(--on-ink);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:opacity .15s,background-color .15s}
+button:hover,.btn:hover{opacity:.86}
+.ghost{background:transparent;color:var(--ink)}
+.ghost:hover{opacity:1;background:var(--wash)}
+button:disabled{opacity:.5;cursor:default}
+button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 18px;margin:16px 2px 0;font-size:10.5px;color:var(--ink-3)}
+.legal a{color:inherit;text-underline-offset:3px}
+
+/* Completed and studio-record views */
+.done-head h2,.record h2{font-size:clamp(28px,3.8vw,42px);line-height:1.08;letter-spacing:-.022em;margin:0;text-wrap:balance}
+.done-head h2:focus{outline:none}
+.done-head p{margin:12px 0 0;color:var(--ink-2);max-width:56ch}
+.summary{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);margin:0;border-top:1px solid var(--rule)}
+.summary dt,.summary dd{margin:0;padding:12px 0;border-bottom:1px solid var(--rule)}
+.summary dt{font-size:11px;color:var(--ink-3);padding-top:15px;padding-right:16px}
+.summary dd{overflow-wrap:anywhere;min-width:0}
+.summary a,.rec a{color:var(--ink);text-underline-offset:3px}
+.summary.compact dt,.summary.compact dd{padding-block:9px;font-size:14px}
+.summary.compact dt{font-size:10.5px;padding-top:11px}
+.send{display:grid;gap:14px;padding:20px;border:1px solid var(--rule);background:var(--wash)}
+.send p{margin:0}
+.addr{font-family:var(--mono);font-size:15px;color:var(--ink);-webkit-user-select:all;user-select:all;overflow-wrap:anywhere}
+.copytext{white-space:pre-wrap;overflow-wrap:anywhere;font-family:var(--mono);font-size:12.5px;line-height:1.6;margin:0;padding:14px;max-height:280px;overflow:auto;background:var(--paper);border:1px solid var(--rule)}
+.rec-list{display:grid}
+.rec{border-top:1px solid var(--ink);padding:16px 0 28px;display:grid;gap:12px}
+.rec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 16px}
+.rec h3{margin:0;font-size:19px;font-weight:500;letter-spacing:-.01em}
+.rec-date{font-size:11px;color:var(--ink-3)}
+.note{margin:0;color:var(--ink-2)}
+
+@media (max-width:880px){
+  .grid,.intro,.split{grid-template-columns:minmax(0,1fr)}
+  .intro{align-items:start}
+}
+@media (max-width:560px){
+  .summary{grid-template-columns:minmax(0,1fr)}
+  .summary dt{border-bottom:0;padding-bottom:0}
+  .opt{grid-template-columns:60px minmax(0,1fr) 16px;gap:12px}
+  .actions{margin-left:0;width:100%;justify-content:flex-start}
+  .actions button{width:100%}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<main class="wrap">
+  <form class="sheet" id="brief" novalidate>
+    <header>
+      <div class="meta"><span>Creative brief</span><span>Winter campaign</span><span data-today></span></div>
+      <div class="intro">
+        <div>
+          <h1>Your winter campaign, in five answers.</h1>
+          <p class="lede">Your answers set the mood, sound, format and visual references for the film. Return the brief and the studio begins work the same day.</p>
+        </div>
+        <div class="who">
+          <div class="field">
+            <label class="label" for="brand">Brand</label>
+            <input type="text" id="brand" name="brand" autocomplete="organization" placeholder="Brand or house name" aria-describedby="err-brand">
+            <p class="err" id="err-brand" hidden></p>
+          </div>
+          <div class="field">
+            <label class="label" for="contact">Contact</label>
+            <input type="text" id="contact" name="contact" placeholder="Name and email" aria-describedby="err-contact">
+            <p class="err" id="err-contact" hidden></p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="item" aria-labelledby="t1">
+        <div class="item-head"><span class="idx">01</span><h2 id="t1">Brand assets</h2></div>
+        <p class="ask">Please upload your vector brand logos (.SVG or .EPS format) and your high-resolution product photography/assets.</p>
+        <fieldset class="checks">
+          <legend class="sr">What your files include</legend>
+          <label class="check"><input type="checkbox" id="has-logos" name="has-logos"><span class="box" aria-hidden="true"></span><span class="ctext"><b>Vector logos</b><span class="spec">.SVG · .EPS</span></span></label>
+          <label class="check"><input type="checkbox" id="has-photo" name="has-photo"><span class="box" aria-hidden="true"></span><span class="ctext"><b>Product photography and assets</b><span class="spec">Highest resolution available</span></span></label>
+        </fieldset>
+        <div class="field">
+          <label class="label" for="files">Link to your files</label>
+          <input type="url" id="files" name="files" inputmode="url" autocomplete="off" placeholder="WeTransfer, Dropbox, Google Drive or brand portal" aria-describedby="err-files">
+          <p class="err" id="err-files" hidden></p>
+        </div>
+        <label class="check"><input type="checkbox" id="assets-later" name="assets-later"><span class="box" aria-hidden="true"></span><span class="ctext"><b>Our assets will follow</b><span class="spec">Send them when ready</span></span></label>
+        <p class="why"><b>Why we ask</b><span>Clean vector files let us place your mark precisely in the film: on product, apparel or equipment, or as a closing signature.</span></p>
+      </section>
+
+      <section class="item" aria-labelledby="t2">
+        <div class="item-head"><span class="idx">02</span><h2 id="t2">Atmospheric mood</h2></div>
+        <p class="ask" id="ask-mood">Select the visual tone that aligns with your winter campaign rollout.</p>
+        <fieldset class="options" id="mood-group" aria-describedby="ask-mood err-mood">
+          <legend class="sr">Visual tone</legend>
+          <label class="opt"><input type="radio" name="mood" id="mood-stark" value="Stark & Moody">
+            <span class="grade" aria-hidden="true"><i style="background:var(--g-stark-1)"></i><i style="background:var(--g-stark-2)"></i><i style="background:var(--g-stark-3)"></i><i style="background:var(--g-stark-4)"></i><i style="background:var(--g-stark-5)"></i></span>
+            <span class="otext"><b>Stark &amp; Moody</b><span class="d">High-contrast, deep shadows, cinematic realism like the sample film.</span><span class="spec">Grade · low key, cool</span></span>
+            <span class="dot" aria-hidden="true"></span>
+          </label>
+          <label class="opt"><input type="radio" name="mood" id="mood-adrenaline" value="High-Adrenaline">
+            <span class="grade" aria-hidden="true"><i style="background:var(--g-adren-1)"></i><i style="background:var(--g-adren-2)"></i><i style="background:var(--g-adren-3)"></i><i style="background:var(--g-adren-4)"></i><i style="background:var(--g-adren-5)"></i></span>
+            <span class="otext"><b>High-Adrenaline</b><span class="d">Fast-paced camera movement, bright white snow, action-focused.</span><span class="spec">Grade · high key, crisp</span></span>
+            <span class="dot" aria-hidden="true"></span>
+          </label>
+          <label class="opt"><input type="radio" name="mood" id="mood-apres" value="Après-Ski Luxury">
+            <span class="grade" aria-hidden="true"><i style="background:var(--g-apres-1)"></i><i style="background:var(--g-apres-2)"></i><i style="background:var(--g-apres-3)"></i><i style="background:var(--g-apres-4)"></i><i style="background:var(--g-apres-5)"></i></span>
+            <span class="otext"><b>Après-Ski Luxury</b><span class="d">Golden hour lighting, high-end lifestyle focus.</span><span class="spec">Grade · warm, low sun</span></span>
+            <span class="dot" aria-hidden="true"></span>
+          </label>
+        </fieldset>
+        <p class="err" id="err-mood" hidden></p>
+        <p class="why"><b>Why we ask</b><span>Your choice sets the lighting, colour grade and pace of the film, with no creative writing needed from your team.</span></p>
+      </section>
+
+      <section class="item" aria-labelledby="t3">
+        <div class="item-head"><span class="idx">03</span><h2 id="t3">Technical specifications &amp; formats</h2></div>
+        <p class="ask" id="ask-format">Where will these assets primarily live?</p>
+        <fieldset class="options" id="format-group" aria-describedby="ask-format err-format">
+          <legend class="sr">Format</legend>
+          <label class="opt"><input type="radio" name="format" id="format-vertical" value="Vertical (9:16)">
+            <span class="frames" aria-hidden="true"><span class="fr v"></span></span>
+            <span class="otext"><b>Vertical (9:16)</b><span class="d">Optimised for Instagram Reels, TikTok, and YouTube Shorts.</span><span class="spec">1080 × 1920 px</span></span>
+            <span class="dot" aria-hidden="true"></span>
+          </label>
+          <label class="opt"><input type="radio" name="format" id="format-landscape" value="Landscape (16:9)">
+            <span class="frames" aria-hidden="true"><span class="fr h"></span></span>
+            <span class="otext"><b>Landscape (16:9)</b><span class="d">Optimised for website heroes, YouTube, and digital screens.</span><span class="spec">1920 × 1080 px</span></span>
+            <span class="dot" aria-hidden="true"></span>
+          </label>
+          <label class="opt"><input type="radio" name="format" id="format-both" value="Both formats (premium multi-format package)">
+            <span class="frames both" aria-hidden="true"><span class="fr v"></span><span class="fr h"></span></span>
+            <span class="otext"><b>Both formats</b><span class="d">Requires a premium multi-format package.</span><span class="spec">9:16 + 16:9</span></span>
+            <span class="dot" aria-hidden="true"></span>
+          </label>
+        </fieldset>
+        <p class="err" id="err-format" hidden></p>
+        <p class="why"><b>Why we ask</b><span>Fixing the frame on day one means every shot is composed for where it will live, with nothing re-rendered at the end.</span></p>
+      </section>
+
+      <section class="item" aria-labelledby="t4">
+        <div class="item-head"><span class="idx">04</span><h2 id="t4">Reference links</h2></div>
+        <p class="ask">Drop 1–2 links to your current website, Instagram feed, or past campaigns so our team can match your existing visual identity perfectly.</p>
+        <div class="refs">
+          <div class="field">
+            <label class="label" for="ref1">Reference 1</label>
+            <input type="url" id="ref1" name="ref1" inputmode="url" autocomplete="off" placeholder="Website, Instagram or campaign link" aria-describedby="err-ref1">
+            <p class="err" id="err-ref1" hidden></p>
+          </div>
+          <div class="field">
+            <label class="label" for="ref2">Reference 2 · optional</label>
+            <input type="url" id="ref2" name="ref2" inputmode="url" autocomplete="off" placeholder="A second link, if helpful" aria-describedby="err-ref2">
+            <p class="err" id="err-ref2" hidden></p>
+          </div>
+        </div>
+        <p class="why"><b>Good to know</b><span>Public links work best. If a page needs a password, share it with your studio contact.</span></p>
+      </section>
+
+      <section class="item wide" aria-labelledby="t5">
+        <div class="item-head"><span class="idx">05</span><h2 id="t5">Sound</h2></div>
+        <div class="split">
+          <div>
+            <p class="ask" id="ask-sound">Select the sound direction for your film, and share a reference if you have one.</p>
+            <fieldset class="options" id="sound-group" aria-describedby="ask-sound err-sound">
+              <legend class="sr">Sound direction</legend>
+              <label class="opt"><input type="radio" name="sound" id="sound-natural" value="Natural sound design">
+                <span class="wave" aria-hidden="true"><i style="height:6px"></i><i style="height:10px"></i><i style="height:4px"></i><i style="height:14px"></i><i style="height:8px"></i><i style="height:5px"></i><i style="height:12px"></i><i style="height:7px"></i><i style="height:18px"></i><i style="height:6px"></i><i style="height:9px"></i><i style="height:4px"></i><i style="height:11px"></i><i style="height:15px"></i><i style="height:5px"></i><i style="height:8px"></i><i style="height:3px"></i><i style="height:7px"></i></span>
+                <span class="otext"><b>Natural sound design</b><span class="d">Wind, snow, breath and movement. No music.</span><span class="spec">Sound design only</span></span>
+                <span class="dot" aria-hidden="true"></span>
+              </label>
+              <label class="opt"><input type="radio" name="sound" id="sound-score" value="Cinematic score">
+                <span class="wave" aria-hidden="true"><i style="height:2px"></i><i style="height:3px"></i><i style="height:3px"></i><i style="height:4px"></i><i style="height:5px"></i><i style="height:6px"></i><i style="height:8px"></i><i style="height:10px"></i><i style="height:12px"></i><i style="height:15px"></i><i style="height:18px"></i><i style="height:21px"></i><i style="height:25px"></i><i style="height:28px"></i><i style="height:32px"></i><i style="height:35px"></i><i style="height:38px"></i><i style="height:40px"></i></span>
+                <span class="otext"><b>Cinematic score</b><span class="d">Atmospheric music that builds with the film, over natural sound.</span><span class="spec">Score · slow build</span></span>
+                <span class="dot" aria-hidden="true"></span>
+              </label>
+              <label class="opt"><input type="radio" name="sound" id="sound-rhythm" value="Rhythm-led track">
+                <span class="wave" aria-hidden="true"><i style="height:30px"></i><i style="height:8px"></i><i style="height:5px"></i><i style="height:5px"></i><i style="height:30px"></i><i style="height:8px"></i><i style="height:5px"></i><i style="height:5px"></i><i style="height:30px"></i><i style="height:8px"></i><i style="height:5px"></i><i style="height:5px"></i><i style="height:30px"></i><i style="height:8px"></i><i style="height:5px"></i><i style="height:5px"></i><i style="height:30px"></i><i style="height:8px"></i></span>
+                <span class="otext"><b>Rhythm-led track</b><span class="d">A track with a clear pulse, with the edit cut to the beat.</span><span class="spec">Edit to tempo</span></span>
+                <span class="dot" aria-hidden="true"></span>
+              </label>
+            </fieldset>
+            <p class="err" id="err-sound" hidden></p>
+            <p class="why"><b>Why we ask</b><span>Sound carries much of a film's feeling. Your choice sets the music, pace and texture of the edit.</span></p>
+          </div>
+          <div>
+            <div class="field">
+              <label class="label" for="soundref">Sound reference · optional</label>
+              <input type="url" id="soundref" name="soundref" inputmode="url" autocomplete="off" placeholder="A track, playlist or film whose sound you like" aria-describedby="err-soundref">
+              <p class="err" id="err-soundref" hidden></p>
+            </div>
+            <p class="why"><b>Good to know</b><span>A reference guides direction only. A commercial track needs a licence to appear in the final film. Send any sonic logo or brand music with your assets.</span></p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="foot">
+      <ol class="progress" aria-label="Brief progress">
+        <li data-step="s1"><span class="pdot" aria-hidden="true"></span>01 Assets<span class="sr st">, to do</span></li>
+        <li data-step="s2"><span class="pdot" aria-hidden="true"></span>02 Mood<span class="sr st">, to do</span></li>
+        <li data-step="s3"><span class="pdot" aria-hidden="true"></span>03 Format<span class="sr st">, to do</span></li>
+        <li data-step="s4"><span class="pdot" aria-hidden="true"></span>04 References<span class="sr st">, to do</span></li>
+        <li data-step="s5"><span class="pdot" aria-hidden="true"></span>05 Sound<span class="sr st">, to do</span></li>
+      </ol>
+      <div class="actions">
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+        <button type="submit" id="submit">Submit brief</button>
+      </div>
+    </footer>
+  </form>
+
+  <section class="sheet" id="done" hidden>
+    <div class="meta"><span>Creative brief</span><span id="done-brand"></span><span data-today></span></div>
+    <div class="done-head">
+      <h2 id="done-title" tabindex="-1">Brief received.</h2>
+      <p id="done-text"></p>
+    </div>
+    <dl class="summary" id="summary"></dl>
+    <div class="send" id="send" hidden>
+      <p>Email the brief to <span class="addr">isra@bestories.co.uk</span> and <span class="addr">yashir@bestories.co.uk</span></p>
+      <div class="btns">
+        <button type="button" id="copy">Copy brief</button>
+        <a class="btn ghost" id="mailto" href="mailto:isra@bestories.co.uk,yashir@bestories.co.uk">Open in email</a>
+      </div>
+      <pre class="copytext" id="copytext" hidden></pre>
+    </div>
+    <div class="btns">
+      <button type="button" class="ghost" id="edit">Edit answers</button>
+      <button type="button" class="ghost" id="new" hidden>Start a new brief</button>
+    </div>
+  </section>
+
+  <section class="sheet record" id="record" hidden>
+    <div class="meta"><span>Studio record</span><span id="record-count"></span><a href="#">Back to the brief</a></div>
+    <h2>Received briefs</h2>
+    <p class="note" id="record-note">Loading briefs…</p>
+    <div class="rec-list" id="record-list"></div>
+  </section>
+
+  <p class="legal"><span>BE STORIES LIMITED · Company no. 17436283</span><span>bestories.co.uk</span></p>
+</main>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+  var form = $("brief"), doneEl = $("done"), recordEl = $("record");
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var state = { db: null, canEdit: false, canWrite: null, ref: null, view: "form", last: null };
+  var FIELDS = ["brand", "contact", "files", "mood", "format", "ref1", "ref2", "sound", "soundref"];
+  var RADIOS = ["mood", "format", "sound"];
+  var INCOMPLETE = "That link looks incomplete. Paste the full address.";
+  var EMAIL_RE = /[^\s@]+@[^\s@]+\.[^\s@]+/;
+
+  function dateFmt(d){ return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }); }
+  function stampFmt(d){ return d.toLocaleString("en-GB", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }); }
+  document.querySelectorAll("[data-today]").forEach(function(n){ n.textContent = dateFmt(new Date()); });
+
+  function normUrl(raw){
+    var v = (raw || "").trim();
+    if (!v) return "";
+    if (/^@[A-Za-z0-9._]{1,30}$/.test(v)) return "https://www.instagram.com/" + v.slice(1) + "/";
+    if (/\s/.test(v)) return null;
+    if (!/^https?:\/\//i.test(v)) v = "https://" + v;
+    try {
+      var u = new URL(v);
+      if (!/^https?:$/.test(u.protocol) || u.hostname.indexOf(".") < 1) return null;
+      return u.href;
+    } catch (e) { return null; }
+  }
+  function safeHref(v){
+    try { var u = new URL(String(v)); return /^https?:$/.test(u.protocol) ? u.href : null; } catch (e) { return null; }
+  }
+
+  function collect(){
+    var mood = form.querySelector('input[name="mood"]:checked');
+    var format = form.querySelector('input[name="format"]:checked');
+    var sound = form.querySelector('input[name="sound"]:checked');
+    return {
+      sound: sound ? sound.value : "", soundref: $("soundref").value,
+      brand: $("brand").value.trim(), contact: $("contact").value.trim(),
+      files: $("files").value, later: $("assets-later").checked, logos: $("has-logos").checked, photography: $("has-photo").checked,
+      mood: mood ? mood.value : "", format: format ? format.value : "",
+      ref1: $("ref1").value, ref2: $("ref2").value
+    };
+  }
+
+  function check(d){
+    var errs = {};
+    if (!d.brand) errs.brand = "Add the brand name.";
+    if (!d.contact) errs.contact = "Add a name and email so the studio can reply.";
+    else if (!EMAIL_RE.test(d.contact)) errs.contact = "Add an email address so the studio can reply.";
+    var files = normUrl(d.files);
+    if (files === null) errs.files = INCOMPLETE;
+    else if (files === "" && !d.later) errs.files = "Add a link to your files, or tick “Our assets will follow”.";
+    if (!d.mood) errs.mood = "Choose one visual tone.";
+    if (!d.format) errs.format = "Choose where the film will live.";
+    var r1 = normUrl(d.ref1), r2 = normUrl(d.ref2);
+    if (r1 === null) errs.ref1 = INCOMPLETE;
+    else if (r1 === "" && !r2) errs.ref1 = "Add at least one link.";
+    if (r2 === null) errs.ref2 = INCOMPLETE;
+    if (!d.sound) errs.sound = "Choose a sound direction.";
+    var sr = normUrl(d.soundref);
+    if (sr === null) errs.soundref = INCOMPLETE;
+    return {
+      errs: errs,
+      clean: { brand: d.brand, contact: d.contact, files: files, later: d.later, logos: d.logos, photography: d.photography,
+               mood: d.mood, format: d.format, refs: [r1, r2].filter(Boolean),
+               sound: d.sound, soundRef: sr || "" }
+    };
+  }
+
+  var STEPS = {
+    s1: function(d){ return !!normUrl(d.files) || d.later; },
+    s2: function(d){ return !!d.mood; },
+    s3: function(d){ return !!d.format; },
+    s4: function(d){ return !!(normUrl(d.ref1) || normUrl(d.ref2)); },
+    s5: function(d){ return !!d.sound; }
+  };
+  function progress(){
+    var d = collect();
+    form.querySelectorAll(".progress li").forEach(function(li){
+      var ok = STEPS[li.dataset.step](d);
+      li.classList.toggle("ok", ok);
+      li.querySelector(".st").textContent = ok ? ", complete" : ", to do";
+    });
+  }
+
+  function setErr(key, msg){
+    var p = $("err-" + key);
+    if (!p) return;
+    p.textContent = msg || "";
+    p.hidden = !msg;
+    var ctl = $(key);
+    if (ctl && ctl.tagName === "INPUT") ctl.setAttribute("aria-invalid", msg ? "true" : "false");
+    var group = $(key + "-group");
+    if (group) group.classList.toggle("invalid", !!msg);
+  }
+
+  function onEdit(e){
+    var t = e.target;
+    if (FIELDS.indexOf(t.id) > -1) setErr(t.id, "");
+    if (t.id === "assets-later") setErr("files", "");
+    if (RADIOS.indexOf(t.name) > -1) setErr(t.name, "");
+    $("status").textContent = "";
+    $("status").classList.remove("bad");
+    progress();
+  }
+  form.addEventListener("input", onEdit);
+  form.addEventListener("change", onEdit);
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var res = check(collect());
+    FIELDS.forEach(function(k){ setErr(k, res.errs[k]); });
+    var bad = FIELDS.filter(function(k){ return res.errs[k]; });
+    var status = $("status");
+    if (bad.length){
+      status.textContent = bad.length === 1 ? "One item needs attention." : bad.length + " items need attention.";
+      status.classList.add("bad");
+      var k = bad[0];
+      var target = RADIOS.indexOf(k) > -1 ?form.querySelector('input[name="' + k + '"]') : $(k);
+      if (target){
+        var anchor = target.closest(".item") || target.closest(".field") || target;
+        anchor.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+        try { target.focus({ preventScroll: true }); } catch (x) { target.focus(); }
+      }
+      return;
+    }
+    status.classList.remove("bad");
+    status.textContent = "Sending…";
+    var btn = $("submit");
+    btn.disabled = true;
+    var go = (state.db && state.canWrite !== false) ? save(res.clean) : send(res.clean);
+    go.then(function(saved){
+      btn.disabled = false;
+      status.textContent = "";
+      showDone(res.clean, saved);
+    });
+  });
+
+  /* On bestories.co.uk: mail the brief to the studio. Any failure falls back to copy-and-email. */
+  function send(c){
+    if (!window.fetch || !/^https?:$/.test(location.protocol)) return Promise.resolve(false);
+    return fetch("/api/brief", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        brand: c.brand, contact: c.contact,
+        files: filesLine(c.files, c.later), includes: includes(c.logos, c.photography),
+        mood: c.mood, format: c.format, ref1: c.refs[0] || "", ref2: c.refs[1] || "",
+        sound: c.sound, sound_ref: c.soundRef
+      })
+    }).then(function(r){ return r.ok; }, function(){ return false; });
+  }
+
+  function wait(ms){ return new Promise(function(r){ setTimeout(r, ms); }); }
+  function save(c){
+    var body = {
+      brand: c.brand, contact: c.contact,
+      assets: { link: c.files || "", toFollow: !!c.later, logos: c.logos, photography: c.photography },
+      mood: c.mood, format: c.format, references: c.refs,
+      sound: { direction: c.sound, reference: c.soundRef },
+      submittedAt: new Date().toISOString()
+    };
+    function attempt(n){
+      try { if (!state.ref) state.ref = state.db.collection("briefs").doc(); }
+      catch (e) { return Promise.resolve(false); }
+      return state.ref.set(body).then(function(){ return true; }, function(err){
+        var code = err && err.code;
+        if (code === "unavailable" && n === 0) return wait(700 + Math.random() * 700).then(function(){ return attempt(1); });
+        if (code === "invalid_argument" || code === "not_granted" || code === "revoked" || code === "capability_disabled") state.canWrite = false;
+        return false;
+      });
+    }
+    return attempt(0);
+  }
+
+  function node(tag, cls, text){
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  function linkOrText(v){
+    var h = safeHref(v);
+    if (!h) return document.createTextNode(v ? String(v) : "—");
+    var a = node("a", null, String(v));
+    a.href = h; a.target = "_blank"; a.rel = "noopener noreferrer";
+    return a;
+  }
+  function addRow(dl, label, content){
+    dl.appendChild(node("dt", null, label));
+    var dd = node("dd");
+    if (typeof content === "string") dd.textContent = content;
+    else if (Array.isArray(content)) content.forEach(function(n, i){ if (i) dd.appendChild(node("br")); dd.appendChild(n); });
+    else dd.appendChild(content);
+    dl.appendChild(dd);
+  }
+  function filesContent(link, later){
+    if (!link) return later ? "To follow" : "—";
+    var a = linkOrText(link);
+    return later ? [a, document.createTextNode("More to follow")] : a;
+  }
+  function filesLine(link, later){
+    if (link && later) return link + " (more to follow)";
+    return link || "To follow";
+  }
+  function includes(logos, photo){
+    var parts = [];
+    if (logos) parts.push("Vector logos (.SVG / .EPS)");
+    if (photo) parts.push("Product photography and assets");
+    return parts.length ? parts.join(", ") : "Not specified";
+  }
+
+  function briefText(c){
+    var L = [
+      "CREATIVE BRIEF · WINTER CAMPAIGN",
+      "Brand: " + c.brand,
+      "Contact: " + c.contact,
+      "Date: " + dateFmt(new Date()),
+      "",
+      "01 Brand assets",
+      "Files: " + filesLine(c.files, c.later),
+      "Includes: " + includes(c.logos, c.photography),
+      "",
+      "02 Atmospheric mood",
+      c.mood,
+      "",
+      "03 Technical specifications & formats",
+      c.format,
+      "",
+      "04 Reference links"
+    ];
+    return L.concat(c.refs, ["", "05 Sound", c.sound, "Reference: " + (c.soundRef || "None given")]).join("\n");
+  }
+
+  function showDone(c, saved){
+    state.last = c;
+    $("done-brand").textContent = c.brand;
+    $("done-title").textContent = saved ? "Brief received." : "Your brief is ready to send.";
+    $("done-text").textContent = saved
+      ? (state.db ? "Saved to the studio record on " : "Sent to the studio on ") + stampFmt(new Date()) + ". The studio begins work today."
+      : "Copy the brief and email it to the studio. Work begins the day it arrives." + (c.later ? " Send your assets to the same addresses when they're ready." : "");
+    var dl = $("summary");
+    dl.replaceChildren();
+    addRow(dl, "Contact", c.contact);
+    addRow(dl, "01 Files", filesContent(c.files, c.later));
+    addRow(dl, "Includes", includes(c.logos, c.photography));
+    addRow(dl, "02 Mood", c.mood);
+    addRow(dl, "03 Format", c.format);
+    addRow(dl, "04 References", c.refs.map(linkOrText));
+    addRow(dl, "05 Sound", c.sound);
+    addRow(dl, "Sound reference", c.soundRef ? linkOrText(c.soundRef) : "None given");
+    var text = briefText(c);
+    $("copytext").textContent = text;
+    $("copytext").hidden = true;
+    $("copy").textContent = "Copy brief";
+    $("mailto").href = "mailto:isra@bestories.co.uk,yashir@bestories.co.uk?subject=" + encodeURIComponent("Creative brief: " + c.brand) + "&body=" + encodeURIComponent(text);
+    $("send").hidden = saved;
+    $("new").hidden = !saved;
+    state.view = "done";
+    route();
+    window.scrollTo({ top: 0, behavior: "auto" });
+    try { $("done-title").focus({ preventScroll: true }); } catch (x) {}
+  }
+
+  $("copy").addEventListener("click", function(){
+    var btn = $("copy");
+    var text = state.last ? briefText(state.last) : $("copytext").textContent;
+    function ok(){ btn.textContent = "Copied"; setTimeout(function(){ btn.textContent = "Copy brief"; }, 2200); }
+    function fallback(){
+      var pre = $("copytext");
+      pre.hidden = false;
+      var r = document.createRange();
+      r.selectNodeContents(pre);
+      var s = window.getSelection();
+      s.removeAllRanges(); s.addRange(r);
+      btn.textContent = "Selected. Copy with ⌘C or Ctrl+C";
+    }
+    try { navigator.clipboard.writeText(text).then(ok, fallback); } catch (e) { fallback(); }
+  });
+
+  $("edit").addEventListener("click", function(){
+    state.view = "form"; route();
+    window.scrollTo({ top: 0, behavior: "auto" });
+  });
+  $("new").addEventListener("click", function(){
+    form.reset();
+    state.ref = null; state.last = null;
+    FIELDS.forEach(function(k){ setErr(k, ""); });
+    progress();
+    state.view = "form"; route();
+    window.scrollTo({ top: 0, behavior: "auto" });
+    try { $("brand").focus({ preventScroll: true }); } catch (x) {}
+  });
+
+  /* Studio record: editors only, opened from the footer link (#received) */
+  var unsub = null;
+  function renderRecord(snap){
+    var list = $("record-list");
+    list.replaceChildren();
+    $("record-count").textContent = snap.empty ? "" : snap.size + (snap.size === 1 ? " brief" : " briefs");
+    $("record-note").textContent = "No briefs yet. Briefs submitted from this page appear here, newest first.";
+    $("record-note").hidden = !snap.empty;
+    snap.docs.forEach(function(doc){
+      var d = doc.data() || {};
+      var a = (d.assets && typeof d.assets === "object") ? d.assets : {};
+      var art = node("article", "rec");
+      var head = node("div", "rec-head");
+      head.appendChild(node("h3", null, String(d.brand || "Unnamed brand")));
+      var t = new Date(d.submittedAt);
+      head.appendChild(node("span", "rec-date", isNaN(t.getTime()) ? "" : stampFmt(t)));
+      var dl = node("dl", "summary compact");
+      addRow(dl, "Contact", String(d.contact || "—"));
+      addRow(dl, "Mood", String(d.mood || "—"));
+      addRow(dl, "Format", String(d.format || "—"));
+      addRow(dl, "Files", filesContent(a.link, !!a.toFollow));
+      addRow(dl, "Includes", includes(!!a.logos, !!a.photography));
+      var refs = Array.isArray(d.references) ? d.references : [];
+      addRow(dl, "References", refs.length ? refs.map(linkOrText) : "—");
+      var snd = (d.sound && typeof d.sound === "object") ? d.sound : {};
+      addRow(dl, "Sound", String(snd.direction || "—"));
+      addRow(dl, "Sound ref", snd.reference ? linkOrText(snd.reference) : "—");
+      art.appendChild(head); art.appendChild(dl);
+      list.appendChild(art);
+    });
+  }
+  function startRecord(){
+    if (unsub || !state.db) return;
+    try {
+      unsub = state.db.collection("briefs").orderBy("submittedAt", "desc").limit(200).onSnapshot(renderRecord, function(){
+        unsub = null;
+        $("record-note").textContent = "The studio record couldn't load. Reload the page to try again.";
+        $("record-note").hidden = false;
+      });
+    } catch (e) {
+      $("record-note").textContent = "The studio record couldn't load. Reload the page to try again.";
+    }
+  }
+  function route(){
+    var rec = !!(state.canEdit && state.db && location.hash === "#received");
+    recordEl.hidden = !rec;
+    form.hidden = rec || state.view !== "form";
+    doneEl.hidden = rec || state.view !== "done";
+    if (rec) startRecord();
+  }
+  window.addEventListener("hashchange", route);
+
+  progress();
+
+  (function init(){
+    var c = window.claude;
+    if (!c || typeof c.use !== "function") return;
+    Promise.all([
+      c.use("db").catch(function(){ return null; }),
+      c.use("user").catch(function(){ return null; })
+    ]).then(function(r){
+      var db = r[0], user = r[1];
+      state.db = db;
+      if (!db) state.canWrite = false;
+      if (!user) return;
+      return Promise.all([
+        user.canEdit().catch(function(){ return false; }),
+        user.can("data.write").catch(function(){ return null; })
+      ]).then(function(p){
+        state.canEdit = !!p[0];
+        if (p[1] === false) state.canWrite = false;
+      });
+    }).then(function(){
+      if (state.canEdit && state.db){
+        $("record-link").hidden = false;
+        route();
+      }
+    }).catch(function(){});
+  })();
+})();
+</script>
+
+</body></html>

@@ -105,6 +105,14 @@
       "destination": "/dist/briefsubmission-alpine/index.html"
     },
     {
+      "source": "/brief/winter-ti7me5b8qw",
+      "destination": "/dist/brief/winter-ti7me5b8qw/index.html"
+    },
+    {
+      "source": "/brief/winter-ti7me5b8qw/",
+      "destination": "/dist/brief/winter-ti7me5b8qw/index.html"
+    },
+    {
       "source": "/assets/:path*",
       "destination": "/dist/assets/:path*"
     },
@@ -147,18 +155,19 @@
           "value": "no-referrer"
         }
       ]
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/brief/winter-ti7me5b8qw",
-      "destination": "/briefsubmission-alpine",
-      "permanent": true
     },
     {
-      "source": "/brief/winter-ti7me5b8qw/",
-      "destination": "/briefsubmission-alpine",
-      "permanent": true
+      "source": "/brief/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        }
+      ]
     }
   ]
 }
