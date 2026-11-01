@@ -39,7 +39,7 @@ def mark(h=18, ink='currentColor', point='var(--amber-rev)', ident=False, cls=''
 
 # ---------------------------------------------------------------- content
 C = {k: json.load(open(os.path.join(ROOT, 'content', k + '.json')))
-     for k in ('projects', 'journal', 'capabilities', 'method', 'team', 'engagements')}
+     for k in ('projects', 'journal', 'capabilities', 'method', 'team', 'engagements', 'private')}
 
 NAV = [('Work', '/work/'), ('Studio', '/studio/'), ('Capabilities', '/capabilities/'),
        ('Journal', '/journal/'), ('Enquiries', '/enquiries/')]
@@ -853,6 +853,23 @@ def build_legal():
 """
         page('/%s/' % slug, '%s — Be Stories' % title, desc, b)
 
+# ---------------------------------------------------------------- private
+# Standalone client pages, shared by link only. Copied as-is with noindex added;
+# kept out of nav, sitemap and robots.txt so the path is never published.
+def build_private():
+    import hashlib, base64
+    for p in C['private']:
+        html = open(os.path.join(ROOT, 'content', 'private', p['file'])).read()
+        html = html.replace('<head>', '<head><meta name="robots" content="noindex,nofollow">'
+                            '<meta name="referrer" content="no-referrer">', 1)
+        out = os.path.join(DIST, p['path'].strip('/'), 'index.html')
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        open(out, 'w').write(html)
+        inline = re.findall(r'<script(?![^>]*\bsrc=)[^>]*>(.*?)</script>', html, re.S)
+        if inline:
+            CSP_HASHES[p['path']] = ['sha256-' + base64.b64encode(
+                hashlib.sha256(b.encode()).digest()).decode() for b in inline]
+
 # ---------------------------------------------------------------- static
 def build_static():
     for src, dst in [('assets', 'assets')]:
@@ -883,6 +900,6 @@ if __name__ == '__main__':
     os.makedirs(DIST)
     build_home(); build_work(); build_capabilities(); build_studio()
     build_journal(); build_enquiries(); build_booking(); build_manage()
-    build_404(); build_legal(); build_static()
+    build_404(); build_legal(); build_private(); build_static()
     n = sum(len(f) for _, _, f in os.walk(DIST))
     print('built %d files into dist/' % n)

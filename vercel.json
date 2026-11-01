@@ -97,6 +97,14 @@
       "destination": "/dist/terms/index.html"
     },
     {
+      "source": "/brief/:slug",
+      "destination": "/dist/brief/:slug/index.html"
+    },
+    {
+      "source": "/brief/:slug/",
+      "destination": "/dist/brief/:slug/index.html"
+    },
+    {
       "source": "/assets/:path*",
       "destination": "/dist/assets/:path*"
     },
@@ -111,6 +119,21 @@
     {
       "source": "/site.webmanifest",
       "destination": "/dist/site.webmanifest"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/brief/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        }
+      ]
     }
   ]
 }
