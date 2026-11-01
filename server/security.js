@@ -13,6 +13,8 @@ const LIMITS = {
   name: 120, company: 160, role: 120, email: 254, website: 300,
   timing: 160, engagement: 60, budget: 60, summary: 4000,
   working_on: 4000, change: 4000, timezone: 64, start: 40,
+  brand: 160, contact: 300, files: 1000, includes: 200, mood: 80, format: 80,
+  ref1: 1000, ref2: 1000, sound: 80, sound_ref: 1000,
 };
 
 const EMAIL = /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/;
@@ -72,6 +74,23 @@ function validateBooking(body) {
   else if (start.getTime() < Date.now()) errors.push('start_in_past');
   if (d.timezone && !/^[A-Za-z0-9_+\-/]{1,64}$/.test(d.timezone)) d.timezone = '';
   return { data: d, start, errors };
+}
+
+const BRIEF_FIELDS = ['brand', 'contact', 'files', 'includes', 'mood', 'format',
+  'ref1', 'ref2', 'sound', 'sound_ref'];
+
+/* The client-facing creative brief. Contact is free text ("Name and email"),
+   so the reply-to address is pulled out of it rather than trusted whole. */
+function validateBrief(body) {
+  const d = shape(body, BRIEF_FIELDS);
+  const errors = [];
+  for (const f of ['brand', 'contact', 'mood', 'format', 'sound']) {
+    if (!d[f]) errors.push('missing_' + f);
+  }
+  const m = d.contact.match(/[^@\s<>(),;:"]+@[^@\s<>(),;:"]+\.[^@\s<>(),;:"]{2,}/);
+  d.email = m ? m[0] : '';
+  if (d.contact && !d.email) errors.push('bad_email');
+  return { data: d, errors };
 }
 
 function validateEnquiry(body) {
@@ -149,5 +168,5 @@ function headers({ dist, hsts = true }) {
 
 module.exports = {
   LIMITS, EMAIL, clean, oneLine, escapeHtml, shape,
-  validateBooking, validateEnquiry, enforceJson, sameOrigin, headers,
+  validateBooking, validateEnquiry, validateBrief, enforceJson, sameOrigin, headers,
 };

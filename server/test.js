@@ -106,6 +106,28 @@ test('a complete enquiry validates', () => {
   assert.deepEqual(errors, []);
 });
 
+/* ---- creative brief validation ----------------------------------------- */
+test('brief requires brand, contact email and the three choices', () => {
+  const { errors } = sec.validateBrief({ brand: '', contact: 'Jo Smith' });
+  for (const e of ['missing_brand', 'missing_mood', 'missing_format', 'missing_sound', 'bad_email']) {
+    assert.ok(errors.includes(e), e);
+  }
+});
+
+test('brief pulls the reply-to address out of free-text contact', () => {
+  const { data, errors } = sec.validateBrief({
+    brand: 'Runout', contact: 'Jo Smith <jo@runout.co>', mood: 'Stark & Moody',
+    format: 'Vertical (9:16)', sound: 'Cinematic score', ref1: 'https://runout.co/',
+  });
+  assert.deepEqual(errors, []);
+  assert.equal(data.email, 'jo@runout.co');
+});
+
+test('brief values cannot carry a newline into the subject', () => {
+  const { data } = sec.validateBrief({ brand: 'A\r\nBcc: x@evil.test', contact: 'a@b.co' });
+  assert.ok(!/[\r\n]/.test(data.brand));
+});
+
 /* ---- transport guards -------------------------------------------------- */
 function fakeRes() {
   return {

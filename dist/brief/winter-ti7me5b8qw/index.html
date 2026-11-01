@@ -494,13 +494,28 @@ button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--
     status.textContent = "Sending…";
     var btn = $("submit");
     btn.disabled = true;
-    var go = (state.db && state.canWrite !== false) ? save(res.clean) : Promise.resolve(false);
+    var go = (state.db && state.canWrite !== false) ? save(res.clean) : send(res.clean);
     go.then(function(saved){
       btn.disabled = false;
       status.textContent = "";
       showDone(res.clean, saved);
     });
   });
+
+  /* On bestories.co.uk: mail the brief to the studio. Any failure falls back to copy-and-email. */
+  function send(c){
+    if (!window.fetch || !/^https?:$/.test(location.protocol)) return Promise.resolve(false);
+    return fetch("/api/brief", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        brand: c.brand, contact: c.contact,
+        files: filesLine(c.files, c.later), includes: includes(c.logos, c.photography),
+        mood: c.mood, format: c.format, ref1: c.refs[0] || "", ref2: c.refs[1] || "",
+        sound: c.sound, sound_ref: c.soundRef
+      })
+    }).then(function(r){ return r.ok; }, function(){ return false; });
+  }
 
   function wait(ms){ return new Promise(function(r){ setTimeout(r, ms); }); }
   function save(c){
@@ -588,7 +603,7 @@ button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--
     $("done-brand").textContent = c.brand;
     $("done-title").textContent = saved ? "Brief received." : "Your brief is ready to send.";
     $("done-text").textContent = saved
-      ? "Saved to the studio record on " + stampFmt(new Date()) + ". The studio begins work today."
+      ? (state.db ? "Saved to the studio record on " : "Sent to the studio on ") + stampFmt(new Date()) + ". The studio begins work today."
       : "Copy the brief and email it to the studio. Work begins the day it arrives." + (c.later ? " Send your assets to the same addresses when they're ready." : "");
     var dl = $("summary");
     dl.replaceChildren();

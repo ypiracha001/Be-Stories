@@ -35,6 +35,7 @@ const {
   SLOT_MINUTES = '30',
   LEAD_HOURS = '18',
   HORIZON_DAYS = '45',
+  BRIEF_TO = 'isra@bestories.co.uk,yashir@bestories.co.uk', // creative brief recipients, comma separated
   SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS,
   MANAGE_SECRET,
   PUBLIC_URL = 'https://bestories.co.uk',
@@ -428,6 +429,45 @@ app.post('/api/enquiry', writeGuards, async (req, res) => {
     res.json({ ok: true });
   } catch (err) {
     console.error('enquiry', err.message);
+    res.status(502).json({ error: 'mail_failed' });
+  }
+});
+
+/* Creative brief from an unlisted /brief/ page. Mailed to the producers; if
+   this fails the page falls back to the client copying it into an email. */
+app.post('/api/brief', writeGuards, async (req, res) => {
+  const { data: b, errors } = sec.validateBrief(req.body);
+  if (errors.length) return res.status(400).json({ error: errors[0] });
+  if (!SMTP_HOST) return res.status(503).json({ error: 'mail_not_connected' });
+  try {
+    const tx = mailer();
+    const text = [
+      'CREATIVE BRIEF · WINTER CAMPAIGN',
+      `Brand: ${b.brand}`,
+      `Contact: ${b.contact}`,
+      '',
+      '01 Brand assets',
+      `Files: ${b.files || 'To follow'}`,
+      `Includes: ${b.includes || 'Not specified'}`,
+      '',
+      '02 Atmospheric mood', b.mood,
+      '',
+      '03 Technical specifications & formats', b.format,
+      '',
+      '04 Reference links', ...[b.ref1, b.ref2].filter(Boolean),
+      '',
+      '05 Sound', b.sound, `Reference: ${b.sound_ref || 'None given'}`,
+    ].join('\n');
+    await tx.sendMail({
+      from: `Be Stories <${STUDIO_EMAIL}>`,
+      to: BRIEF_TO,
+      replyTo: b.email,                                   // extracted, validated address
+      subject: sec.oneLine(`Creative brief: ${b.brand}`, 160),
+      text,                                               // plain text only
+    });
+    res.json({ ok: true });
+  } catch (err) {
+    console.error('brief', err.message);
     res.status(502).json({ error: 'mail_failed' });
   }
 });
