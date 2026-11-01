@@ -151,7 +151,12 @@
   ],
   "redirects": [
     {
-      "source": "/brief/winter-ti7me5b8qw/:rest*",
+      "source": "/brief/winter-ti7me5b8qw",
+      "destination": "/briefsubmission-alpine",
+      "permanent": true
+    },
+    {
+      "source": "/brief/winter-ti7me5b8qw/",
       "destination": "/briefsubmission-alpine",
       "permanent": true
     }
