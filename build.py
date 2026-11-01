@@ -862,6 +862,8 @@ def build_private():
         html = open(os.path.join(ROOT, 'content', 'private', p['file'])).read()
         html = html.replace('<head>', '<head><meta name="robots" content="noindex,nofollow">'
                             '<meta name="referrer" content="no-referrer">', 1)
+        if '<!--bs:mark-->' in html:   # the approved wordmark, never redrawn by hand
+            html = html.replace('<body>', '<body>' + defs(), 1).replace('<!--bs:mark-->', mark(17))
         out = os.path.join(DIST, p['path'].strip('/'), 'index.html')
         os.makedirs(os.path.dirname(out), exist_ok=True)
         open(out, 'w').write(html)

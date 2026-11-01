@@ -1,183 +1,283 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Winter Campaign Brief</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Winter Campaign Brief — Be Stories</title>
+<meta name="theme-color" content="#15130F">
+<link rel="icon" href="/assets/logo/bs-04-favicon.svg" sizes="any" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400&display=swap">
 <style>
-/* Layout: one framed sheet — header band, a 2×2 grid of the four brief items, a footer with progress and submit */
+/* be stories. — client brief. Ink / Bone / Amber, as the site. One form, five chapters. */
 :root{
-  --ground:#E8EAEB;
-  --paper:#FAFAF9;
-  --ink:#141618;
-  --ink-2:rgba(20,22,24,.74);
-  --ink-3:rgba(20,22,24,.58);
-  --rule:rgba(20,22,24,.14);
-  --wash:rgba(20,22,24,.04);
-  --on-ink:#FAFAF9;
-  --alert:#A3302B;
-  --sans:"Hanken Grotesk","Helvetica Neue",Helvetica,Arial,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
-  /* Grade strips: content colours describing each look, identical in both themes */
-  --g-stark-1:#0E1013;--g-stark-2:#272C33;--g-stark-3:#525A64;--g-stark-4:#9AA2AA;--g-stark-5:#E4E7EA;
-  --g-adren-1:#2F4E6B;--g-adren-2:#7FA6C4;--g-adren-3:#C9DDEC;--g-adren-4:#EEF5FA;--g-adren-5:#FFFFFF;
-  --g-apres-1:#3B2A20;--g-apres-2:#7A573E;--g-apres-3:#BE9466;--g-apres-4:#E3C79C;--g-apres-5:#F5E8D2;
+  --ink:#15130F;--ink-raise:#1B1915;--ink-deep:#0A0908;--bone:#EFEAE0;--paper:#E5DFD3;
+  --amber:#A0641F;--amber-rev:#BE8038;--smoke:#8C887F;
+  --on-ink:#EFEAE0;--on-ink-2:rgba(239,234,224,.66);--on-ink-3:rgba(239,234,224,.42);
+  --on-bone:#15130F;--on-bone-2:rgba(21,19,15,.66);--on-bone-3:rgba(21,19,15,.42);
+  --hair-ink:rgba(239,234,224,.14);--hair-bone:rgba(21,19,15,.14);
+  --alert:#E39A7E;
+  --sans:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --gut:clamp(16px,4.4vw,64px);--max:1280px;
+  --ease:cubic-bezier(.2,0,.1,1);--mid:520ms;--slow:900ms;
+  color-scheme:dark;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --ground:#0A0B0C;--paper:#131517;--ink:#E8EAEB;
-    --ink-2:rgba(232,234,235,.76);--ink-3:rgba(232,234,235,.56);
-    --rule:rgba(232,234,235,.16);--wash:rgba(232,234,235,.05);
-    --on-ink:#131517;--alert:#EC9A92;color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --ground:#0A0B0C;--paper:#131517;--ink:#E8EAEB;
-  --ink-2:rgba(232,234,235,.76);--ink-3:rgba(232,234,235,.56);
-  --rule:rgba(232,234,235,.16);--wash:rgba(232,234,235,.05);
-  --on-ink:#131517;--alert:#EC9A92;color-scheme:dark;
-}
-*{box-sizing:border-box}
-body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-.wrap{max-width:1200px;margin:0 auto;padding-block:clamp(16px,4vw,44px);padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
-.sheet{background:var(--paper);border:1px solid var(--rule);padding:clamp(20px,4vw,48px);display:grid;gap:clamp(28px,3.6vw,44px)}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--ink);color:var(--on-ink);font-family:var(--sans);font-size:16.5px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+::selection{background:var(--amber);color:var(--bone)}
+[hidden]{display:none!important}
+a{color:inherit}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:-1px}
+:focus-visible{outline:1px solid var(--amber-rev);outline-offset:4px}
 
-/* Mono: architectural information only — indices, labels, specs, folios */
-.meta,.label,.idx,.spec,.why b,.progress,.legal,.rec-date,.summary dt{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em}
-.meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 20px;font-size:11px;color:var(--ink-3);padding-bottom:14px;border-bottom:1px solid var(--rule)}
-.meta a{color:var(--ink);text-underline-offset:3px}
+.grain{position:fixed;inset:0;z-index:30;pointer-events:none;opacity:.055;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/></filter><rect width='140' height='140' filter='url(%23n)'/></svg>")}
 
-.intro{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:end;margin-top:clamp(22px,3vw,34px)}
-h1{font-size:clamp(30px,4.3vw,48px);line-height:1.04;letter-spacing:-.025em;font-weight:500;margin:0;text-wrap:balance}
-.lede{margin:16px 0 0;color:var(--ink-2);max-width:44ch;font-size:16px}
-.who{display:grid;gap:20px}
+.shell{max-width:var(--max);margin:0 auto;padding-inline:max(var(--gut),env(safe-area-inset-left,0px))}
+.meta,.label,.spec,.why b,.progress,.legal,.rec-date,.summary dt,.no,.tag{font-family:var(--mono);text-transform:uppercase;letter-spacing:.18em;font-weight:400}
+.meta{font-size:10.5px;color:var(--on-ink-3)}
+.amber{color:var(--amber-rev)}
 
+/* --- masthead ------------------------------------------------------------ */
+.top{position:absolute;top:0;left:0;right:0;z-index:5}
+.top .shell{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;color:var(--on-ink)}
+.brand svg{height:17px;width:auto;overflow:visible}
+
+/* --- hero ---------------------------------------------------------------- */
+.hero{position:relative;min-height:min(88svh,860px);display:flex;flex-direction:column;justify-content:flex-end;padding-top:120px;overflow:hidden}
+.hero__field{position:absolute;inset:-6%;z-index:0;animation:drift 34s var(--ease) infinite alternate;
+  background:
+    radial-gradient(70% 60% at 78% 12%,rgba(201,221,236,.10) 0%,transparent 60%),
+    radial-gradient(120% 90% at 70% 20%,rgba(160,100,31,.10) 0%,transparent 58%),
+    radial-gradient(140% 120% at 10% 100%,rgba(239,234,224,.06) 0%,transparent 62%),
+    linear-gradient(180deg,#191713 0%,#0F0E0C 62%,#0A0908 100%)}
+.hero__field::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,9,8,.8) 100%)}
+.hero__ridge{position:absolute;left:0;right:0;bottom:0;height:38%;z-index:0;opacity:.5;
+  background:linear-gradient(180deg,rgba(239,234,224,.05),rgba(239,234,224,0) 70%);
+  clip-path:polygon(0 72%,9% 52%,16% 60%,27% 30%,35% 44%,44% 18%,53% 38%,61% 26%,70% 50%,79% 34%,88% 56%,100% 40%,100% 100%,0 100%)}
+@keyframes drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-2.5%,1.5%,0) scale(1.04)}}
+.hero__in{position:relative;z-index:1;width:100%;padding-bottom:clamp(40px,7vh,84px)}
+.kicker{display:flex;gap:10px 22px;flex-wrap:wrap}
+h1{font-weight:700;font-size:clamp(40px,7.4vw,104px);line-height:.97;letter-spacing:-.037em;margin:clamp(18px,3vh,28px) 0 0;max-width:13ch;text-wrap:balance}
+h1 .pt{color:var(--amber-rev)}
+.lede{font-size:clamp(17.5px,1.85vw,23px);line-height:1.46;letter-spacing:-.012em;color:var(--on-ink-2);margin:clamp(20px,3vh,30px) 0 0;max-width:46ch}
+.hero__meta{margin-top:clamp(36px,6vh,64px);padding-top:18px;border-top:1px solid var(--hair-ink);display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
+.toc{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 26px}
+.toc a{text-decoration:none;color:var(--on-ink-3);transition:color var(--mid) var(--ease)}
+.toc a:hover{color:var(--on-ink)}
+.toc b{color:var(--amber-rev);font-weight:400;margin-right:8px}
+
+/* --- bands --------------------------------------------------------------- */
+.band{padding-block:clamp(64px,11vh,140px);border-top:1px solid var(--hair-ink)}
+.band.raise{background:var(--ink-raise)}
+.band.bone{background:var(--bone);color:var(--on-bone);border-top:0}
+.bone .meta,.bone .label{color:var(--on-bone-3)}
+.chapter{display:grid;grid-template-columns:1fr;gap:clamp(26px,4vw,56px)}
+@media(min-width:960px){.chapter{grid-template-columns:minmax(0,.38fr) minmax(0,.62fr);align-items:start}
+  .chapter__head{position:sticky;top:40px}}
+.no{font-size:11px;letter-spacing:.16em;color:var(--amber-rev)}
+.bone .no{color:var(--amber)}
+h2{font-weight:700;font-size:clamp(29px,4.4vw,58px);line-height:1.02;letter-spacing:-.032em;margin:14px 0 0;text-wrap:balance}
+.ask{margin:16px 0 0;color:var(--on-ink-2);font-size:clamp(16.5px,1.5vw,18.5px);line-height:1.5;max-width:40ch}
+.bone .ask{color:var(--on-bone-2)}
+.why{margin:26px 0 0;padding-top:16px;border-top:1px solid var(--hair-ink);display:grid;gap:6px;font-size:14px;line-height:1.55;color:var(--on-ink-2);max-width:42ch}
+.why b{font-size:10px;color:var(--amber-rev)}
+.chapter__body{display:grid;gap:clamp(22px,3vw,34px);min-width:0}
+
+/* --- fields -------------------------------------------------------------- */
 .field{display:grid;gap:4px;min-width:0}
-.label{font-size:11px;color:var(--ink-3)}
-input[type="text"],input[type="url"]{font:inherit;font-size:16px;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--rule);border-radius:0;padding:8px 0 9px;width:100%;min-width:0;transition:border-color .15s,box-shadow .15s}
-input::placeholder{color:var(--ink-3);opacity:.85}
-input[type="text"]:hover,input[type="url"]:hover{border-bottom-color:var(--ink-3)}
-input[type="text"]:focus,input[type="url"]:focus{outline:none;border-bottom-color:var(--ink);box-shadow:0 1px 0 0 var(--ink)}
+.label{font-size:10px;color:var(--on-ink-3)}
+input[type="text"],input[type="url"]{font:inherit;font-size:clamp(17px,1.6vw,20px);letter-spacing:-.01em;color:inherit;background:transparent;border:0;border-bottom:1px solid var(--hair-ink);border-radius:0;padding:10px 0 12px;width:100%;min-width:0;transition:border-color var(--mid) var(--ease)}
+.bone input{border-bottom-color:var(--hair-bone)}
+input::placeholder{color:var(--on-ink-3);opacity:1}
+.bone input::placeholder{color:var(--on-bone-3)}
+input[type="text"]:hover,input[type="url"]:hover{border-bottom-color:var(--on-ink-3)}
+.bone input:hover{border-bottom-color:var(--on-bone-3)}
+input[type="text"]:focus,input[type="url"]:focus{outline:none;border-bottom-color:var(--amber-rev)}
+.bone input:focus{border-bottom-color:var(--amber)}
 input[aria-invalid="true"]{border-bottom-color:var(--alert)}
-.err{margin:2px 0 0;font-size:13px;line-height:1.4;color:var(--alert)}
+.bone input[aria-invalid="true"]{border-bottom-color:#A3302B}
+.err{margin:4px 0 0;font-size:13.5px;line-height:1.4;color:var(--alert)}
+.bone .err{color:#A3302B}
+.who{display:grid;grid-template-columns:1fr;gap:clamp(24px,3vw,40px) clamp(24px,4vw,64px)}
+@media(min-width:760px){.who{grid-template-columns:1fr 1fr}}
+.who-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:clamp(26px,4vh,40px)}
+.who-head h2{font-size:clamp(24px,3vw,38px);margin:0}
 
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(30px,3.6vw,46px) clamp(24px,4vw,64px)}
-.item{display:grid;gap:16px;align-content:start;border-top:1px solid var(--ink);padding-top:14px;min-width:0}
-.item-head{display:flex;align-items:baseline;gap:14px}
-.idx{font-size:12px;color:var(--ink-3)}
-h2{font-size:20px;line-height:1.25;font-weight:500;letter-spacing:-.01em;margin:0}
-.ask{margin:0;color:var(--ink-2);font-size:15px;max-width:58ch}
-
+/* --- choice plates (mood) ------------------------------------------------ */
 fieldset{border:0;margin:0;padding:0;min-width:0}
-.options{display:grid;gap:8px}
-.opt{position:relative;display:grid;grid-template-columns:72px minmax(0,1fr) 16px;gap:16px;align-items:center;padding:10px 16px 10px 10px;border:1px solid var(--rule);border-radius:2px;cursor:pointer;transition:border-color .15s,background-color .15s}
-.opt:hover{border-color:var(--ink-3)}
-.opt:has(input:checked){border-color:var(--ink);background:var(--wash)}
-.opt:has(input:focus-visible){outline:2px solid var(--ink);outline-offset:2px}
-.options.invalid .opt{border-color:var(--alert)}
 .opt input,.check input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
-.otext{display:grid;gap:2px;min-width:0}
-.otext b{font-weight:500;font-size:15.5px;line-height:1.35}
-.otext .d{font-size:14px;line-height:1.45;color:var(--ink-2)}
-.spec{font-size:10.5px;color:var(--ink-3);margin-top:3px}
-.dot{width:16px;height:16px;border-radius:50%;border:1px solid var(--ink-3);display:grid;place-items:center}
-.opt:has(input:checked) .dot{border-color:var(--ink)}
-.opt:has(input:checked) .dot::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--ink)}
+.plates{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:640px){.plates{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.opt{position:relative;cursor:pointer;display:grid;align-content:start;gap:14px;min-width:0}
+.plate{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--ink-deep);
+  transition:transform 1100ms var(--ease)}
+.plate::before{content:"";position:absolute;inset:0;background:var(--light);transition:transform 1400ms var(--ease)}
+.plate::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:var(--ridge);
+  clip-path:polygon(0 58%,14% 34%,24% 46%,40% 10%,52% 32%,63% 20%,78% 48%,90% 30%,100% 44%,100% 100%,0 100%)}
+.opt:hover .plate::before{transform:scale(1.04)}
+.plate .ring{position:absolute;inset:0;z-index:2;box-shadow:inset 0 0 0 1px rgba(239,234,224,.08);transition:box-shadow var(--mid) var(--ease)}
+.plate .tag{position:absolute;z-index:3;left:12px;top:12px;font-size:9.5px;letter-spacing:.16em;padding:5px 8px;background:rgba(10,9,8,.55);backdrop-filter:blur(6px);color:var(--on-ink-2)}
+.plate .sel{position:absolute;z-index:3;right:12px;top:12px;display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;padding:5px 8px;background:var(--bone);color:var(--ink);opacity:0;transform:translateY(-4px);transition:opacity var(--mid) var(--ease),transform var(--mid) var(--ease)}
+.plate .sel::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--amber)}
+.opt:has(input:checked) .ring{box-shadow:inset 0 0 0 2px var(--amber-rev)}
+.opt:has(input:checked) .sel{opacity:1;transform:none}
+.opt:has(input:focus-visible) .ring{box-shadow:inset 0 0 0 2px var(--amber-rev),0 0 0 3px rgba(190,128,56,.35)}
+.grade{display:grid;grid-template-columns:repeat(5,1fr);height:6px}
+.otext{display:grid;gap:4px;min-width:0}
+.otext b{font-weight:600;font-size:clamp(18px,1.7vw,21px);letter-spacing:-.018em;line-height:1.25}
+.otext .d{font-size:14.5px;line-height:1.5;color:var(--on-ink-2)}
+.spec{font-size:10px;color:var(--on-ink-3);margin-top:4px}
+.opt:has(input:checked) .otext b{color:var(--amber-rev)}
+.options.invalid .ring{box-shadow:inset 0 0 0 1px var(--alert)}
+.options.invalid .row{border-color:var(--alert)}
 
-.grade{display:grid;grid-template-columns:repeat(5,1fr);height:46px;border:1px solid var(--rule)}
-.item.wide{grid-column:1/-1}
-.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px clamp(24px,4vw,64px);align-items:start}
-.split > div{display:grid;gap:16px;align-content:start;min-width:0}
-.wave{height:46px;display:flex;align-items:center;justify-content:space-between;padding:0 6px}
-.wave i{width:2px;border-radius:1px;background:var(--ink);flex:none}
-.frames{height:46px;display:flex;align-items:center;justify-content:center}
-.fr{border:1.5px solid var(--ink);border-radius:1px;background:var(--paper);flex:none}
-.fr.v{width:22.5px;height:40px}
-.fr.h{width:40px;height:22.5px}
-.frames.both .fr.h{margin-left:-12px;margin-top:12px}
+.m-stark{--light:radial-gradient(90% 60% at 22% 18%,#9AA2AA 0%,#525A64 26%,#272C33 58%,#0E1013 100%);--ridge:linear-gradient(180deg,#0E1013,#050608)}
+.m-adren{--light:radial-gradient(100% 70% at 70% 14%,#FFFFFF 0%,#EEF5FA 22%,#C9DDEC 50%,#7FA6C4 82%,#2F4E6B 100%);--ridge:linear-gradient(180deg,#FFFFFF,#DCE9F3)}
+.m-apres{--light:radial-gradient(90% 70% at 80% 62%,#F5E8D2 0%,#E3C79C 18%,#BE9466 40%,#7A573E 70%,#3B2A20 100%);--ridge:linear-gradient(180deg,#2A1D15,#1A120D)}
 
-.checks{display:grid;gap:10px}
-.check{position:relative;display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;align-items:start;cursor:pointer}
-.box{width:16px;height:16px;border:1px solid var(--ink-3);border-radius:2px;margin-top:3px;display:grid;place-items:center;transition:background-color .15s,border-color .15s}
-.check:hover .box{border-color:var(--ink)}
-.check:has(input:checked) .box{background:var(--ink);border-color:var(--ink)}
-.check:has(input:checked) .box::after{content:"";width:8px;height:4px;border-left:1.5px solid var(--on-ink);border-bottom:1.5px solid var(--on-ink);transform:translateY(-1px) rotate(-45deg)}
-.check:has(input:focus-visible) .box{outline:2px solid var(--ink);outline-offset:2px}
-.ctext{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;min-width:0}
-.ctext b{font-weight:500;font-size:15px}
+/* --- rows (format, sound) ------------------------------------------------ */
+.rows{display:grid;gap:10px}
+.row{display:grid;grid-template-columns:clamp(84px,12vw,132px) minmax(0,1fr) 20px;gap:clamp(14px,2.4vw,28px);align-items:center;padding:16px clamp(14px,2vw,22px) 16px 16px;border:1px solid var(--hair-ink);background:rgba(239,234,224,.015);transition:border-color var(--mid) var(--ease),background-color var(--mid) var(--ease)}
+.row:hover{border-color:rgba(239,234,224,.32)}
+.opt.row:has(input:checked){border-color:var(--amber-rev);background:rgba(190,128,56,.07)}
+.opt.row:has(input:focus-visible){outline:1px solid var(--amber-rev);outline-offset:3px}
+.dot{width:18px;height:18px;border-radius:50%;border:1px solid var(--on-ink-3);display:grid;place-items:center;transition:border-color var(--mid) var(--ease)}
+.opt:has(input:checked) .dot{border-color:var(--amber-rev)}
+.opt:has(input:checked) .dot::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber-rev)}
+.viz{height:64px;display:flex;align-items:center;justify-content:center}
+.fr{border:1.5px solid var(--on-ink-2);background:linear-gradient(160deg,rgba(239,234,224,.10),rgba(239,234,224,.02));flex:none;transition:border-color var(--mid) var(--ease)}
+.opt:has(input:checked) .fr{border-color:var(--amber-rev)}
+.fr.v{width:32px;height:57px}
+.fr.h{width:57px;height:32px}
+.viz.both .fr.h{margin-left:-16px;margin-top:22px;background:var(--ink-raise)}
+.wave{justify-content:space-between;padding:0 2px}
+.wave i{width:2px;background:var(--on-ink-2);flex:none;transition:background-color var(--mid) var(--ease)}
+.opt:has(input:checked) .wave i{background:var(--amber-rev)}
+
+/* --- checks -------------------------------------------------------------- */
+.checks{display:grid;gap:12px}
+.check{position:relative;display:grid;grid-template-columns:18px minmax(0,1fr);gap:14px;align-items:start;cursor:pointer}
+.box{width:18px;height:18px;border:1px solid var(--on-ink-3);margin-top:3px;display:grid;place-items:center;transition:background-color var(--mid) var(--ease),border-color var(--mid) var(--ease)}
+.check:hover .box{border-color:var(--on-ink)}
+.check:has(input:checked) .box{background:var(--amber-rev);border-color:var(--amber-rev)}
+.check:has(input:checked) .box::after{content:"";width:9px;height:4.5px;border-left:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);transform:translateY(-1px) rotate(-45deg)}
+.check:has(input:focus-visible) .box{outline:1px solid var(--amber-rev);outline-offset:3px}
+.ctext{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 14px;min-width:0}
+.ctext b{font-weight:500;font-size:16.5px}
 .ctext .spec{margin:0}
+.or{display:flex;align-items:center;gap:14px;color:var(--on-ink-3);font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.or::before,.or::after{content:"";height:1px;flex:1;background:var(--hair-ink)}
+.refs{display:grid;gap:22px}
 
-.refs{display:grid;gap:18px}
-.why{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:baseline;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
-.why b{font-weight:400;font-size:10.5px;color:var(--ink-3);white-space:nowrap}
-
-.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 32px;border-top:1px solid var(--rule);padding-top:22px}
-.progress{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:11px;color:var(--ink-3)}
-.progress li{display:flex;align-items:center;gap:8px;transition:color .15s}
-.pdot{width:9px;height:9px;border-radius:50%;border:1px solid currentColor;transition:background-color .15s}
-.progress li.ok{color:var(--ink)}
-.progress li.ok .pdot{background:var(--ink);border-color:var(--ink)}
-.actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:12px 18px;margin-left:auto}
-.status{margin:0;font-size:13.5px;color:var(--ink-2)}
+/* --- sticky submit bar --------------------------------------------------- */
+.foot{position:sticky;bottom:0;z-index:20;background:rgba(21,19,15,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--hair-ink);padding-bottom:env(safe-area-inset-bottom,0px)}
+.foot .shell{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 28px;padding-block:14px}
+.progress{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:10px;color:var(--on-ink-3)}
+.progress li{display:flex;align-items:center;gap:8px;transition:color var(--mid) var(--ease)}
+.pdot{width:7px;height:7px;border-radius:50%;border:1px solid currentColor;transition:background-color var(--mid) var(--ease),border-color var(--mid) var(--ease)}
+.progress li.ok{color:var(--on-ink)}
+.progress li.ok .pdot{background:var(--amber-rev);border-color:var(--amber-rev)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:10px 20px;margin-left:auto}
+.status{margin:0;font-size:14px;color:var(--on-ink-2)}
 .status.bad{color:var(--alert)}
 
-button,.btn{font:inherit;font-size:15px;font-weight:500;line-height:1.2;cursor:pointer;border-radius:2px;padding:14px 28px;border:1px solid var(--ink);background:var(--ink);color:var(--on-ink);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:opacity .15s,background-color .15s}
-button:hover,.btn:hover{opacity:.86}
-.ghost{background:transparent;color:var(--ink)}
-.ghost:hover{opacity:1;background:var(--wash)}
+button,.btn{font:inherit;font-size:15px;font-weight:500;letter-spacing:-.005em;line-height:1.2;cursor:pointer;border-radius:0;padding:15px 26px;border:1px solid var(--bone);background:var(--bone);color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:12px;transition:background-color var(--mid) var(--ease),border-color var(--mid) var(--ease),color var(--mid) var(--ease)}
+button .arw,.btn .arw{font-family:var(--mono);font-size:12px;transition:transform var(--mid) var(--ease)}
+button:hover,.btn:hover{background:#fff;border-color:#fff}
+button:hover .arw{transform:translateX(4px)}
+.ghost{background:transparent;color:var(--on-ink);border-color:var(--hair-ink)}
+.ghost:hover{background:rgba(239,234,224,.05);border-color:var(--on-ink-3)}
 button:disabled{opacity:.5;cursor:default}
-button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
 
-.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 18px;margin:16px 2px 0;font-size:10.5px;color:var(--ink-3)}
-.legal a{color:inherit;text-underline-offset:3px}
-
-/* Completed and studio-record views */
-.done-head h2,.record h2{font-size:clamp(28px,3.8vw,42px);line-height:1.08;letter-spacing:-.022em;margin:0;text-wrap:balance}
-.done-head h2:focus{outline:none}
-.done-head p{margin:12px 0 0;color:var(--ink-2);max-width:56ch}
-.summary{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);margin:0;border-top:1px solid var(--rule)}
-.summary dt,.summary dd{margin:0;padding:12px 0;border-bottom:1px solid var(--rule)}
-.summary dt{font-size:11px;color:var(--ink-3);padding-top:15px;padding-right:16px}
-.summary dd{overflow-wrap:anywhere;min-width:0}
-.summary a,.rec a{color:var(--ink);text-underline-offset:3px}
-.summary.compact dt,.summary.compact dd{padding-block:9px;font-size:14px}
-.summary.compact dt{font-size:10.5px;padding-top:11px}
-.send{display:grid;gap:14px;padding:20px;border:1px solid var(--rule);background:var(--wash)}
+/* --- done and record views ----------------------------------------------- */
+.view{min-height:100svh;padding-top:140px;padding-bottom:clamp(64px,10vh,120px)}
+.view .shell{display:grid;gap:clamp(28px,4vh,44px)}
+.vmeta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 20px;padding-bottom:16px;border-bottom:1px solid var(--hair-ink)}
+.vmeta a{color:var(--on-ink-2);text-underline-offset:4px}
+.done-head h2,.record h2{font-size:clamp(36px,6.4vw,88px);line-height:.98;letter-spacing:-.036em;margin:0;max-width:14ch}
+.done-head h2::after,.record h2::after{content:".";color:var(--amber-rev)}
+#done-title:focus{outline:none}
+.done-head p{margin:20px 0 0;color:var(--on-ink-2);font-size:clamp(17px,1.7vw,21px);line-height:1.5;max-width:52ch}
+.summary{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);margin:0;border-top:1px solid var(--hair-ink)}
+.summary dt,.summary dd{margin:0;padding:15px 0;border-bottom:1px solid var(--hair-ink)}
+.summary dt{font-size:10px;color:var(--amber-rev);padding-top:19px;padding-right:16px}
+.summary dd{overflow-wrap:anywhere;min-width:0;font-size:17px}
+.summary a,.rec a{color:var(--on-ink);text-underline-offset:4px;text-decoration-color:var(--amber-rev)}
+.summary.compact dt,.summary.compact dd{padding-block:10px;font-size:14.5px}
+.summary.compact dt{font-size:9.5px;padding-top:13px}
+.send{display:grid;gap:16px;padding:22px;border-left:2px solid var(--amber-rev);background:rgba(239,234,224,.04)}
 .send p{margin:0}
-.addr{font-family:var(--mono);font-size:15px;color:var(--ink);-webkit-user-select:all;user-select:all;overflow-wrap:anywhere}
-.copytext{white-space:pre-wrap;overflow-wrap:anywhere;font-family:var(--mono);font-size:12.5px;line-height:1.6;margin:0;padding:14px;max-height:280px;overflow:auto;background:var(--paper);border:1px solid var(--rule)}
+.addr{font-family:var(--mono);font-size:14px;color:var(--on-ink);-webkit-user-select:all;user-select:all;overflow-wrap:anywhere}
+.copytext{white-space:pre-wrap;overflow-wrap:anywhere;font-family:var(--mono);font-size:12.5px;line-height:1.6;margin:0;padding:16px;max-height:300px;overflow:auto;background:var(--ink-deep);border:1px solid var(--hair-ink);color:var(--on-ink-2)}
 .rec-list{display:grid}
-.rec{border-top:1px solid var(--ink);padding:16px 0 28px;display:grid;gap:12px}
+.rec{border-top:1px solid var(--on-ink-3);padding:18px 0 30px;display:grid;gap:12px}
 .rec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 16px}
-.rec h3{margin:0;font-size:19px;font-weight:500;letter-spacing:-.01em}
-.rec-date{font-size:11px;color:var(--ink-3)}
-.note{margin:0;color:var(--ink-2)}
+.rec h3{margin:0;font-size:22px;font-weight:600;letter-spacing:-.02em}
+.rec-date{font-size:10px;color:var(--on-ink-3)}
+.note{margin:0;color:var(--on-ink-2)}
 
-@media (max-width:880px){
-  .grid,.intro,.split{grid-template-columns:minmax(0,1fr)}
-  .intro{align-items:start}
-}
-@media (max-width:560px){
+/* --- footer -------------------------------------------------------------- */
+.legal{border-top:1px solid var(--hair-ink);background:var(--ink-deep)}
+.legal .shell{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px 24px;padding-block:28px;font-size:10px;color:var(--on-ink-3)}
+.legal a{text-decoration:none}
+.legal .brand svg{height:15px}
+
+/* --- reveal -------------------------------------------------------------- */
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity var(--slow) var(--ease),transform var(--slow) var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+
+@media(max-width:600px){
   .summary{grid-template-columns:minmax(0,1fr)}
   .summary dt{border-bottom:0;padding-bottom:0}
-  .opt{grid-template-columns:60px minmax(0,1fr) 16px;gap:12px}
-  .actions{margin-left:0;width:100%;justify-content:flex-start}
+  .row{grid-template-columns:64px minmax(0,1fr) 18px;padding:14px 12px}
+  .viz{height:52px}
+  .plate{aspect-ratio:16/10}
+  .progress{display:none}
+  .actions{margin-left:0;width:100%}
   .actions button{width:100%}
+  .top .meta{display:none}
 }
-@media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .rv{opacity:1;transform:none}
+}
 </style>
+</head><body>
+<div class="grain" aria-hidden="true"></div>
 
-<main class="wrap">
-  <form class="sheet" id="brief" novalidate>
-    <header>
-      <div class="meta"><span>Creative brief</span><span>Winter campaign</span><span data-today></span></div>
-      <div class="intro">
-        <div>
-          <h1>Your winter campaign, in five answers.</h1>
-          <p class="lede">Your answers set the mood, sound, format and visual references for the film. Return the brief and the studio begins work the same day.</p>
+<main>
+  <form id="brief" novalidate>
+    <header class="hero">
+      <div class="hero__field" aria-hidden="true"></div>
+      <div class="hero__ridge" aria-hidden="true"></div>
+      <div class="top"><div class="shell">
+        <a class="brand" href="/" aria-label="be stories. — home"><!--bs:mark--></a>
+        <span class="meta">Private brief</span>
+      </div></div>
+      <div class="shell hero__in">
+        <div class="kicker"><span class="meta amber">Creative brief</span><span class="meta">Winter campaign</span><span class="meta" data-today></span></div>
+        <h1>Your winter campaign, in five answers<span class="pt">.</span></h1>
+        <p class="lede">Your answers set the mood, sound, format and visual references for the film. Return the brief and the studio begins work the same day.</p>
+        <div class="hero__meta">
+          <ol class="toc meta">
+            <li><a href="#c1"><b>01</b>Assets</a></li>
+            <li><a href="#c2"><b>02</b>Mood</a></li>
+            <li><a href="#c3"><b>03</b>Format</a></li>
+            <li><a href="#c4"><b>04</b>References</a></li>
+            <li><a href="#c5"><b>05</b>Sound</a></li>
+          </ol>
+          <span class="meta">About four minutes</span>
         </div>
+      </div>
+    </header>
+
+    <section class="band bone" aria-labelledby="t0">
+      <div class="shell">
+        <div class="who-head"><h2 id="t0">Who the film is for</h2><span class="meta">Before we begin</span></div>
         <div class="who">
           <div class="field">
             <label class="label" for="brand">Brand</label>
@@ -191,80 +291,106 @@ button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <div class="grid">
-      <section class="item" aria-labelledby="t1">
-        <div class="item-head"><span class="idx">01</span><h2 id="t1">Brand assets</h2></div>
-        <p class="ask">Please upload your vector brand logos (.SVG or .EPS format) and your high-resolution product photography/assets.</p>
-        <fieldset class="checks">
-          <legend class="sr">What your files include</legend>
-          <label class="check"><input type="checkbox" id="has-logos" name="has-logos"><span class="box" aria-hidden="true"></span><span class="ctext"><b>Vector logos</b><span class="spec">.SVG · .EPS</span></span></label>
-          <label class="check"><input type="checkbox" id="has-photo" name="has-photo"><span class="box" aria-hidden="true"></span><span class="ctext"><b>Product photography and assets</b><span class="spec">Highest resolution available</span></span></label>
-        </fieldset>
-        <div class="field">
-          <label class="label" for="files">Link to your files</label>
-          <input type="url" id="files" name="files" inputmode="url" autocomplete="off" placeholder="WeTransfer, Dropbox, Google Drive or brand portal" aria-describedby="err-files">
-          <p class="err" id="err-files" hidden></p>
+    <section class="band item" id="c1" aria-labelledby="t1">
+      <div class="shell chapter">
+        <div class="chapter__head rv">
+          <span class="no">01 / 05</span>
+          <h2 id="t1">Brand assets</h2>
+          <p class="ask">Please upload your vector brand logos (.SVG or .EPS format) and your high-resolution product photography/assets.</p>
+          <p class="why"><b>Why we ask</b><span>Clean vector files let us place your mark precisely in the film: on product, apparel or equipment, or as a closing signature.</span></p>
         </div>
-        <label class="check"><input type="checkbox" id="assets-later" name="assets-later"><span class="box" aria-hidden="true"></span><span class="ctext"><b>Our assets will follow</b><span class="spec">Send them when ready</span></span></label>
-        <p class="why"><b>Why we ask</b><span>Clean vector files let us place your mark precisely in the film: on product, apparel or equipment, or as a closing signature.</span></p>
-      </section>
+        <div class="chapter__body">
+          <fieldset class="checks">
+            <legend class="sr">What your files include</legend>
+            <label class="check"><input type="checkbox" id="has-logos" name="has-logos"><span class="box" aria-hidden="true"></span><span class="ctext"><b>Vector logos</b><span class="spec">.SVG · .EPS</span></span></label>
+            <label class="check"><input type="checkbox" id="has-photo" name="has-photo"><span class="box" aria-hidden="true"></span><span class="ctext"><b>Product photography and assets</b><span class="spec">Highest resolution available</span></span></label>
+          </fieldset>
+          <div class="field">
+            <label class="label" for="files">Link to your files</label>
+            <input type="url" id="files" name="files" inputmode="url" autocomplete="off" placeholder="WeTransfer, Dropbox, Google Drive or brand portal" aria-describedby="err-files">
+            <p class="err" id="err-files" hidden></p>
+          </div>
+          <div class="or" aria-hidden="true">or</div>
+          <label class="check"><input type="checkbox" id="assets-later" name="assets-later"><span class="box" aria-hidden="true"></span><span class="ctext"><b>Our assets will follow</b><span class="spec">Send them when ready</span></span></label>
+        </div>
+      </div>
+    </section>
 
-      <section class="item" aria-labelledby="t2">
-        <div class="item-head"><span class="idx">02</span><h2 id="t2">Atmospheric mood</h2></div>
-        <p class="ask" id="ask-mood">Select the visual tone that aligns with your winter campaign rollout.</p>
-        <fieldset class="options" id="mood-group" aria-describedby="ask-mood err-mood">
-          <legend class="sr">Visual tone</legend>
-          <label class="opt"><input type="radio" name="mood" id="mood-stark" value="Stark & Moody">
-            <span class="grade" aria-hidden="true"><i style="background:var(--g-stark-1)"></i><i style="background:var(--g-stark-2)"></i><i style="background:var(--g-stark-3)"></i><i style="background:var(--g-stark-4)"></i><i style="background:var(--g-stark-5)"></i></span>
-            <span class="otext"><b>Stark &amp; Moody</b><span class="d">High-contrast, deep shadows, cinematic realism like the sample film.</span><span class="spec">Grade · low key, cool</span></span>
-            <span class="dot" aria-hidden="true"></span>
-          </label>
-          <label class="opt"><input type="radio" name="mood" id="mood-adrenaline" value="High-Adrenaline">
-            <span class="grade" aria-hidden="true"><i style="background:var(--g-adren-1)"></i><i style="background:var(--g-adren-2)"></i><i style="background:var(--g-adren-3)"></i><i style="background:var(--g-adren-4)"></i><i style="background:var(--g-adren-5)"></i></span>
-            <span class="otext"><b>High-Adrenaline</b><span class="d">Fast-paced camera movement, bright white snow, action-focused.</span><span class="spec">Grade · high key, crisp</span></span>
-            <span class="dot" aria-hidden="true"></span>
-          </label>
-          <label class="opt"><input type="radio" name="mood" id="mood-apres" value="Après-Ski Luxury">
-            <span class="grade" aria-hidden="true"><i style="background:var(--g-apres-1)"></i><i style="background:var(--g-apres-2)"></i><i style="background:var(--g-apres-3)"></i><i style="background:var(--g-apres-4)"></i><i style="background:var(--g-apres-5)"></i></span>
-            <span class="otext"><b>Après-Ski Luxury</b><span class="d">Golden hour lighting, high-end lifestyle focus.</span><span class="spec">Grade · warm, low sun</span></span>
-            <span class="dot" aria-hidden="true"></span>
-          </label>
-        </fieldset>
-        <p class="err" id="err-mood" hidden></p>
-        <p class="why"><b>Why we ask</b><span>Your choice sets the lighting, colour grade and pace of the film, with no creative writing needed from your team.</span></p>
-      </section>
+    <section class="band raise item" id="c2" aria-labelledby="t2">
+      <div class="shell chapter">
+        <div class="chapter__head rv">
+          <span class="no">02 / 05</span>
+          <h2 id="t2">Atmospheric mood</h2>
+          <p class="ask" id="ask-mood">Select the visual tone that aligns with your winter campaign rollout.</p>
+          <p class="why"><b>Why we ask</b><span>Your choice sets the lighting, colour grade and pace of the film, with no creative writing needed from your team.</span></p>
+        </div>
+        <div class="chapter__body">
+          <fieldset class="options plates" id="mood-group" aria-describedby="ask-mood err-mood">
+            <legend class="sr">Visual tone</legend>
+            <label class="opt"><input type="radio" name="mood" id="mood-stark" value="Stark & Moody">
+              <span class="plate m-stark" aria-hidden="true"><span class="ring"></span><span class="tag">Low key · cool</span><span class="sel">Selected</span></span>
+              <span class="grade" aria-hidden="true"><i style="background:#0E1013"></i><i style="background:#272C33"></i><i style="background:#525A64"></i><i style="background:#9AA2AA"></i><i style="background:#E4E7EA"></i></span>
+              <span class="otext"><b>Stark &amp; Moody</b><span class="d">High-contrast, deep shadows, cinematic realism like the sample film.</span></span>
+            </label>
+            <label class="opt"><input type="radio" name="mood" id="mood-adrenaline" value="High-Adrenaline">
+              <span class="plate m-adren" aria-hidden="true"><span class="ring"></span><span class="tag">High key · crisp</span><span class="sel">Selected</span></span>
+              <span class="grade" aria-hidden="true"><i style="background:#2F4E6B"></i><i style="background:#7FA6C4"></i><i style="background:#C9DDEC"></i><i style="background:#EEF5FA"></i><i style="background:#FFFFFF"></i></span>
+              <span class="otext"><b>High-Adrenaline</b><span class="d">Fast-paced camera movement, bright white snow, action-focused.</span></span>
+            </label>
+            <label class="opt"><input type="radio" name="mood" id="mood-apres" value="Après-Ski Luxury">
+              <span class="plate m-apres" aria-hidden="true"><span class="ring"></span><span class="tag">Warm · low sun</span><span class="sel">Selected</span></span>
+              <span class="grade" aria-hidden="true"><i style="background:#3B2A20"></i><i style="background:#7A573E"></i><i style="background:#BE9466"></i><i style="background:#E3C79C"></i><i style="background:#F5E8D2"></i></span>
+              <span class="otext"><b>Après-Ski Luxury</b><span class="d">Golden hour lighting, high-end lifestyle focus.</span></span>
+            </label>
+          </fieldset>
+          <p class="err" id="err-mood" hidden></p>
+        </div>
+      </div>
+    </section>
 
-      <section class="item" aria-labelledby="t3">
-        <div class="item-head"><span class="idx">03</span><h2 id="t3">Technical specifications &amp; formats</h2></div>
-        <p class="ask" id="ask-format">Where will these assets primarily live?</p>
-        <fieldset class="options" id="format-group" aria-describedby="ask-format err-format">
-          <legend class="sr">Format</legend>
-          <label class="opt"><input type="radio" name="format" id="format-vertical" value="Vertical (9:16)">
-            <span class="frames" aria-hidden="true"><span class="fr v"></span></span>
-            <span class="otext"><b>Vertical (9:16)</b><span class="d">Optimised for Instagram Reels, TikTok, and YouTube Shorts.</span><span class="spec">1080 × 1920 px</span></span>
-            <span class="dot" aria-hidden="true"></span>
-          </label>
-          <label class="opt"><input type="radio" name="format" id="format-landscape" value="Landscape (16:9)">
-            <span class="frames" aria-hidden="true"><span class="fr h"></span></span>
-            <span class="otext"><b>Landscape (16:9)</b><span class="d">Optimised for website heroes, YouTube, and digital screens.</span><span class="spec">1920 × 1080 px</span></span>
-            <span class="dot" aria-hidden="true"></span>
-          </label>
-          <label class="opt"><input type="radio" name="format" id="format-both" value="Both formats (premium multi-format package)">
-            <span class="frames both" aria-hidden="true"><span class="fr v"></span><span class="fr h"></span></span>
-            <span class="otext"><b>Both formats</b><span class="d">Requires a premium multi-format package.</span><span class="spec">9:16 + 16:9</span></span>
-            <span class="dot" aria-hidden="true"></span>
-          </label>
-        </fieldset>
-        <p class="err" id="err-format" hidden></p>
-        <p class="why"><b>Why we ask</b><span>Fixing the frame on day one means every shot is composed for where it will live, with nothing re-rendered at the end.</span></p>
-      </section>
+    <section class="band item" id="c3" aria-labelledby="t3">
+      <div class="shell chapter">
+        <div class="chapter__head rv">
+          <span class="no">03 / 05</span>
+          <h2 id="t3">Technical specifications &amp; formats</h2>
+          <p class="ask" id="ask-format">Where will these assets primarily live?</p>
+          <p class="why"><b>Why we ask</b><span>Fixing the frame on day one means every shot is composed for where it will live, with nothing re-rendered at the end.</span></p>
+        </div>
+        <div class="chapter__body">
+          <fieldset class="options rows" id="format-group" aria-describedby="ask-format err-format">
+            <legend class="sr">Format</legend>
+            <label class="opt row"><input type="radio" name="format" id="format-vertical" value="Vertical (9:16)">
+              <span class="viz" aria-hidden="true"><span class="fr v"></span></span>
+              <span class="otext"><b>Vertical (9:16)</b><span class="d">Optimised for Instagram Reels, TikTok, and YouTube Shorts.</span><span class="spec">1080 × 1920 px</span></span>
+              <span class="dot" aria-hidden="true"></span>
+            </label>
+            <label class="opt row"><input type="radio" name="format" id="format-landscape" value="Landscape (16:9)">
+              <span class="viz" aria-hidden="true"><span class="fr h"></span></span>
+              <span class="otext"><b>Landscape (16:9)</b><span class="d">Optimised for website heroes, YouTube, and digital screens.</span><span class="spec">1920 × 1080 px</span></span>
+              <span class="dot" aria-hidden="true"></span>
+            </label>
+            <label class="opt row"><input type="radio" name="format" id="format-both" value="Both formats (premium multi-format package)">
+              <span class="viz both" aria-hidden="true"><span class="fr v"></span><span class="fr h"></span></span>
+              <span class="otext"><b>Both formats</b><span class="d">Requires a premium multi-format package.</span><span class="spec">9:16 + 16:9</span></span>
+              <span class="dot" aria-hidden="true"></span>
+            </label>
+          </fieldset>
+          <p class="err" id="err-format" hidden></p>
+        </div>
+      </div>
+    </section>
 
-      <section class="item" aria-labelledby="t4">
-        <div class="item-head"><span class="idx">04</span><h2 id="t4">Reference links</h2></div>
-        <p class="ask">Drop 1–2 links to your current website, Instagram feed, or past campaigns so our team can match your existing visual identity perfectly.</p>
-        <div class="refs">
+    <section class="band raise item" id="c4" aria-labelledby="t4">
+      <div class="shell chapter">
+        <div class="chapter__head rv">
+          <span class="no">04 / 05</span>
+          <h2 id="t4">Reference links</h2>
+          <p class="ask">Drop 1–2 links to your current website, Instagram feed, or past campaigns so our team can match your existing visual identity perfectly.</p>
+          <p class="why"><b>Good to know</b><span>Public links work best. If a page needs a password, share it with your studio contact.</span></p>
+        </div>
+        <div class="chapter__body refs">
           <div class="field">
             <label class="label" for="ref1">Reference 1</label>
             <input type="url" id="ref1" name="ref1" inputmode="url" autocomplete="off" placeholder="Website, Instagram or campaign link" aria-describedby="err-ref1">
@@ -276,92 +402,104 @@ button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--
             <p class="err" id="err-ref2" hidden></p>
           </div>
         </div>
-        <p class="why"><b>Good to know</b><span>Public links work best. If a page needs a password, share it with your studio contact.</span></p>
-      </section>
+      </div>
+    </section>
 
-      <section class="item wide" aria-labelledby="t5">
-        <div class="item-head"><span class="idx">05</span><h2 id="t5">Sound</h2></div>
-        <div class="split">
-          <div>
-            <p class="ask" id="ask-sound">Select the sound direction for your film, and share a reference if you have one.</p>
-            <fieldset class="options" id="sound-group" aria-describedby="ask-sound err-sound">
-              <legend class="sr">Sound direction</legend>
-              <label class="opt"><input type="radio" name="sound" id="sound-natural" value="Natural sound design">
-                <span class="wave" aria-hidden="true"><i style="height:6px"></i><i style="height:10px"></i><i style="height:4px"></i><i style="height:14px"></i><i style="height:8px"></i><i style="height:5px"></i><i style="height:12px"></i><i style="height:7px"></i><i style="height:18px"></i><i style="height:6px"></i><i style="height:9px"></i><i style="height:4px"></i><i style="height:11px"></i><i style="height:15px"></i><i style="height:5px"></i><i style="height:8px"></i><i style="height:3px"></i><i style="height:7px"></i></span>
-                <span class="otext"><b>Natural sound design</b><span class="d">Wind, snow, breath and movement. No music.</span><span class="spec">Sound design only</span></span>
-                <span class="dot" aria-hidden="true"></span>
-              </label>
-              <label class="opt"><input type="radio" name="sound" id="sound-score" value="Cinematic score">
-                <span class="wave" aria-hidden="true"><i style="height:2px"></i><i style="height:3px"></i><i style="height:3px"></i><i style="height:4px"></i><i style="height:5px"></i><i style="height:6px"></i><i style="height:8px"></i><i style="height:10px"></i><i style="height:12px"></i><i style="height:15px"></i><i style="height:18px"></i><i style="height:21px"></i><i style="height:25px"></i><i style="height:28px"></i><i style="height:32px"></i><i style="height:35px"></i><i style="height:38px"></i><i style="height:40px"></i></span>
-                <span class="otext"><b>Cinematic score</b><span class="d">Atmospheric music that builds with the film, over natural sound.</span><span class="spec">Score · slow build</span></span>
-                <span class="dot" aria-hidden="true"></span>
-              </label>
-              <label class="opt"><input type="radio" name="sound" id="sound-rhythm" value="Rhythm-led track">
-                <span class="wave" aria-hidden="true"><i style="height:30px"></i><i style="height:8px"></i><i style="height:5px"></i><i style="height:5px"></i><i style="height:30px"></i><i style="height:8px"></i><i style="height:5px"></i><i style="height:5px"></i><i style="height:30px"></i><i style="height:8px"></i><i style="height:5px"></i><i style="height:5px"></i><i style="height:30px"></i><i style="height:8px"></i><i style="height:5px"></i><i style="height:5px"></i><i style="height:30px"></i><i style="height:8px"></i></span>
-                <span class="otext"><b>Rhythm-led track</b><span class="d">A track with a clear pulse, with the edit cut to the beat.</span><span class="spec">Edit to tempo</span></span>
-                <span class="dot" aria-hidden="true"></span>
-              </label>
-            </fieldset>
-            <p class="err" id="err-sound" hidden></p>
-            <p class="why"><b>Why we ask</b><span>Sound carries much of a film's feeling. Your choice sets the music, pace and texture of the edit.</span></p>
-          </div>
-          <div>
-            <div class="field">
-              <label class="label" for="soundref">Sound reference · optional</label>
-              <input type="url" id="soundref" name="soundref" inputmode="url" autocomplete="off" placeholder="A track, playlist or film whose sound you like" aria-describedby="err-soundref">
-              <p class="err" id="err-soundref" hidden></p>
-            </div>
-            <p class="why"><b>Good to know</b><span>A reference guides direction only. A commercial track needs a licence to appear in the final film. Send any sonic logo or brand music with your assets.</span></p>
-          </div>
+    <section class="band item" id="c5" aria-labelledby="t5">
+      <div class="shell chapter">
+        <div class="chapter__head rv">
+          <span class="no">05 / 05</span>
+          <h2 id="t5">Sound</h2>
+          <p class="ask" id="ask-sound">Select the sound direction for your film, and share a reference if you have one.</p>
+          <p class="why"><b>Why we ask</b><span>Sound carries much of a film's feeling. Your choice sets the music, pace and texture of the edit.</span></p>
         </div>
-      </section>
-    </div>
+        <div class="chapter__body">
+          <fieldset class="options rows" id="sound-group" aria-describedby="ask-sound err-sound">
+            <legend class="sr">Sound direction</legend>
+            <label class="opt row"><input type="radio" name="sound" id="sound-natural" value="Natural sound design">
+              <span class="viz wave" aria-hidden="true"><i style="height:8px"></i><i style="height:14px"></i><i style="height:5px"></i><i style="height:20px"></i><i style="height:11px"></i><i style="height:6px"></i><i style="height:17px"></i><i style="height:9px"></i><i style="height:26px"></i><i style="height:8px"></i><i style="height:12px"></i><i style="height:5px"></i><i style="height:15px"></i><i style="height:21px"></i><i style="height:6px"></i><i style="height:11px"></i><i style="height:4px"></i><i style="height:9px"></i></span>
+              <span class="otext"><b>Natural sound design</b><span class="d">Wind, snow, breath and movement. No music.</span><span class="spec">Sound design only</span></span>
+              <span class="dot" aria-hidden="true"></span>
+            </label>
+            <label class="opt row"><input type="radio" name="sound" id="sound-score" value="Cinematic score">
+              <span class="viz wave" aria-hidden="true"><i style="height:3px"></i><i style="height:4px"></i><i style="height:4px"></i><i style="height:6px"></i><i style="height:7px"></i><i style="height:9px"></i><i style="height:11px"></i><i style="height:14px"></i><i style="height:17px"></i><i style="height:21px"></i><i style="height:25px"></i><i style="height:29px"></i><i style="height:34px"></i><i style="height:39px"></i><i style="height:44px"></i><i style="height:49px"></i><i style="height:53px"></i><i style="height:56px"></i></span>
+              <span class="otext"><b>Cinematic score</b><span class="d">Atmospheric music that builds with the film, over natural sound.</span><span class="spec">Score · slow build</span></span>
+              <span class="dot" aria-hidden="true"></span>
+            </label>
+            <label class="opt row"><input type="radio" name="sound" id="sound-rhythm" value="Rhythm-led track">
+              <span class="viz wave" aria-hidden="true"><i style="height:42px"></i><i style="height:11px"></i><i style="height:7px"></i><i style="height:7px"></i><i style="height:42px"></i><i style="height:11px"></i><i style="height:7px"></i><i style="height:7px"></i><i style="height:42px"></i><i style="height:11px"></i><i style="height:7px"></i><i style="height:7px"></i><i style="height:42px"></i><i style="height:11px"></i><i style="height:7px"></i><i style="height:7px"></i><i style="height:42px"></i><i style="height:11px"></i></span>
+              <span class="otext"><b>Rhythm-led track</b><span class="d">A track with a clear pulse, with the edit cut to the beat.</span><span class="spec">Edit to tempo</span></span>
+              <span class="dot" aria-hidden="true"></span>
+            </label>
+          </fieldset>
+          <p class="err" id="err-sound" hidden></p>
+          <div class="field">
+            <label class="label" for="soundref">Sound reference · optional</label>
+            <input type="url" id="soundref" name="soundref" inputmode="url" autocomplete="off" placeholder="A track, playlist or film whose sound you like" aria-describedby="err-soundref">
+            <p class="err" id="err-soundref" hidden></p>
+          </div>
+          <p class="why"><b>Good to know</b><span>A reference guides direction only. A commercial track needs a licence to appear in the final film. Send any sonic logo or brand music with your assets.</span></p>
+        </div>
+      </div>
+    </section>
 
     <footer class="foot">
-      <ol class="progress" aria-label="Brief progress">
-        <li data-step="s1"><span class="pdot" aria-hidden="true"></span>01 Assets<span class="sr st">, to do</span></li>
-        <li data-step="s2"><span class="pdot" aria-hidden="true"></span>02 Mood<span class="sr st">, to do</span></li>
-        <li data-step="s3"><span class="pdot" aria-hidden="true"></span>03 Format<span class="sr st">, to do</span></li>
-        <li data-step="s4"><span class="pdot" aria-hidden="true"></span>04 References<span class="sr st">, to do</span></li>
-        <li data-step="s5"><span class="pdot" aria-hidden="true"></span>05 Sound<span class="sr st">, to do</span></li>
-      </ol>
-      <div class="actions">
-        <p class="status" id="status" role="status" aria-live="polite"></p>
-        <button type="submit" id="submit">Submit brief</button>
+      <div class="shell">
+        <ol class="progress" aria-label="Brief progress">
+          <li data-step="s1"><span class="pdot" aria-hidden="true"></span>01 Assets<span class="sr st">, to do</span></li>
+          <li data-step="s2"><span class="pdot" aria-hidden="true"></span>02 Mood<span class="sr st">, to do</span></li>
+          <li data-step="s3"><span class="pdot" aria-hidden="true"></span>03 Format<span class="sr st">, to do</span></li>
+          <li data-step="s4"><span class="pdot" aria-hidden="true"></span>04 References<span class="sr st">, to do</span></li>
+          <li data-step="s5"><span class="pdot" aria-hidden="true"></span>05 Sound<span class="sr st">, to do</span></li>
+        </ol>
+        <div class="actions">
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+          <button type="submit" id="submit">Submit brief <span class="arw" aria-hidden="true">→</span></button>
+        </div>
       </div>
     </footer>
   </form>
 
-  <section class="sheet" id="done" hidden>
-    <div class="meta"><span>Creative brief</span><span id="done-brand"></span><span data-today></span></div>
-    <div class="done-head">
-      <h2 id="done-title" tabindex="-1">Brief received.</h2>
-      <p id="done-text"></p>
-    </div>
-    <dl class="summary" id="summary"></dl>
-    <div class="send" id="send" hidden>
-      <p>Email the brief to <span class="addr">isra@bestories.co.uk</span> and <span class="addr">yashir@bestories.co.uk</span></p>
-      <div class="btns">
-        <button type="button" id="copy">Copy brief</button>
-        <a class="btn ghost" id="mailto" href="mailto:isra@bestories.co.uk,yashir@bestories.co.uk">Open in email</a>
+  <section class="view" id="done" hidden>
+    <div class="shell">
+      <div class="vmeta meta"><span class="amber">Creative brief</span><span id="done-brand"></span><span data-today></span></div>
+      <div class="done-head">
+        <h2 id="done-title" tabindex="-1">Brief received</h2>
+        <p id="done-text"></p>
       </div>
-      <pre class="copytext" id="copytext" hidden></pre>
-    </div>
-    <div class="btns">
-      <button type="button" class="ghost" id="edit">Edit answers</button>
-      <button type="button" class="ghost" id="new" hidden>Start a new brief</button>
+      <dl class="summary" id="summary"></dl>
+      <div class="send" id="send" hidden>
+        <p>Email the brief to <span class="addr">isra@bestories.co.uk</span> and <span class="addr">yashir@bestories.co.uk</span></p>
+        <div class="btns">
+          <button type="button" id="copy">Copy brief</button>
+          <a class="btn ghost" id="mailto" href="mailto:isra@bestories.co.uk,yashir@bestories.co.uk">Open in email</a>
+        </div>
+        <pre class="copytext" id="copytext" hidden></pre>
+      </div>
+      <div class="btns">
+        <button type="button" class="ghost" id="edit">Edit answers</button>
+        <button type="button" class="ghost" id="new" hidden>Start a new brief</button>
+      </div>
     </div>
   </section>
 
-  <section class="sheet record" id="record" hidden>
-    <div class="meta"><span>Studio record</span><span id="record-count"></span><a href="#">Back to the brief</a></div>
-    <h2>Received briefs</h2>
-    <p class="note" id="record-note">Loading briefs…</p>
-    <div class="rec-list" id="record-list"></div>
+  <section class="view record" id="record" hidden>
+    <div class="shell">
+      <div class="vmeta meta"><span class="amber">Studio record</span><span id="record-count"></span><a href="#">Back to the brief</a></div>
+      <h2>Received briefs</h2>
+      <p class="note" id="record-note">Loading briefs…</p>
+      <div class="rec-list" id="record-list"></div>
+    </div>
   </section>
-
-  <p class="legal"><span>BE STORIES LIMITED · Company no. 17436283</span><span>bestories.co.uk</span></p>
 </main>
+
+<footer class="legal">
+  <div class="shell meta">
+    <a class="brand" href="/" aria-label="be stories. — home"><!--bs:mark--></a>
+    <span>Be Stories Limited · Company no. 17436283</span>
+    <span>London · Glasgow · bestories.co.uk</span>
+  </div>
+</footer>
 
 <script>
 (function(){
@@ -601,7 +739,7 @@ button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--
   function showDone(c, saved){
     state.last = c;
     $("done-brand").textContent = c.brand;
-    $("done-title").textContent = saved ? "Brief received." : "Your brief is ready to send.";
+    $("done-title").textContent = saved ? "Brief received" : "Your brief is ready to send";
     $("done-text").textContent = saved
       ? (state.db ? "Saved to the studio record on " : "Sent to the studio on ") + stampFmt(new Date()) + ". The studio begins work today."
       : "Copy the brief and email it to the studio. Work begins the day it arrives." + (c.later ? " Send your assets to the same addresses when they're ready." : "");
@@ -712,6 +850,17 @@ button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--
 
   progress();
 
+  /* Chapters settle into place as they arrive, as on the main site */
+  document.documentElement.classList.add("js");
+  var rvs = document.querySelectorAll(".rv");
+  if (reduce || !("IntersectionObserver" in window)) rvs.forEach(function(n){ n.classList.add("in"); });
+  else {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    rvs.forEach(function(n){ io.observe(n); });
+  }
+
   (function init(){
     var c = window.claude;
     if (!c || typeof c.use !== "function") return;
@@ -739,5 +888,4 @@ button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--
   })();
 })();
 </script>
-
 </body></html>
